@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Prince Kumar Portfolio</title>
+
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- ICONS -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  >
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/home.css">
+
+</head>
+
+<body>
+  <!-- CURSOR TRAIL -->
+
+<div id="trail-container"></div>
+  <!-- THREE JS -->
+
+<div id="three-container"></div>
+  <!-- MATRIX CANVAS -->
+
+<canvas id="matrix"></canvas>
+  <!-- PAGE TRANSITION -->
+
+<div class="page-transition"></div>
+  <!-- SPOTLIGHT -->
+
+<div class="spotlight"></div>
+  <!-- PROGRESS BAR -->
+
+<div class="progress-bar"></div>
+  <!-- LOADER -->
+
+<div class="loader-wrapper">
+
+  <div class="loader">
+
+    <span></span>
+    <span></span>
+    <span></span>
+
+  </div>
+
+</div>
+  <!-- PARTICLES -->
+
+<div id="particles-js"></div>
+<!-- CUSTOM CURSOR -->
+
+<div class="cursor"></div>
+
+<div class="cursor-blur"></div>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="index.html" class="logo">Prince.</a>
+      <!-- NAVBAR -->
+      <nav class="navbar" id="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">
+          Login
+        </a>
+
+        <a href="signup.html">
+          Signup
+        </a>
+
+
+      </nav>
+      <!-- RIGHT -->
+      <div class="nav-right">
+        <button id="theme-toggle" aria-label="Toggle Theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button id="menu-btn" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+   
+  <section class="hero">
+
+    <div class="container hero-container">
+
+      <!-- LEFT -->
+      <div class="hero-content">
+
+        <h1>
+          Hi, I'm
+          <span>Prince Kumar</span>
+        </h1>
+
+        <h2>
+          I'm a
+          <span class="typing"></span>
+        </h2>
+
+        <p>
+          I build modern websites,
+          AI-powered platforms,
+          and educational products.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="projects.html" class="btn">
+            View Projects
+          </a>
+
+          <a href="contact.html" class="btn outline">
+            Contact Me
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div class="hero-image">
+
+        <img
+          src="images/profile.jpg"
+          alt="profile"
+        >
+        <!-- FLOATING ICONS -->
+
+<div class="floating-icons">
+
+  <div class="icon html">
+    <i class="fa-brands fa-html5"></i>
+  </div>
+
+  <div class="icon css">
+    <i class="fa-brands fa-css3-alt"></i>
+  </div>
+
+  <div class="icon js">
+    <i class="fa-brands fa-js"></i>
+  </div>
+
+  <div class="icon react">
+    <i class="fa-brands fa-react"></i>
+  </div>
+
+</div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- TERMINAL -->
+
+<section class="terminal-section">
+
+  <div class="container">
+
+    <div class="terminal">
+
+      <!-- TOP BAR -->
+      <div class="terminal-top">
+
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+
+      </div>
+
+      <!-- BODY -->
+      <div class="terminal-body">
+
+        <p>
+          <span class="green">
+            prince@portfolio
+          </span>
+
+          :
+          <span class="blue">
+            ~
+          </span>
+
+          $
+          whoami
+        </p>
+
+        <p class="terminal-output">
+          Frontend Developer & AI Enthusiast
+        </p>
+
+        <p>
+          <span class="green">
+            prince@portfolio
+          </span>
+
+          :
+          <span class="blue">
+            ~
+          </span>
+
+          $
+          skills
+        </p>
+
+        <p class="terminal-output">
+          HTML • CSS • JavaScript • React • AI
+        </p>
+
+        <p>
+          <span class="green">
+            prince@portfolio
+          </span>
+
+          :
+          <span class="blue">
+            ~
+          </span>
+
+          $
+          projects
+        </p>
+
+        <p class="terminal-output">
+          EduCrush • AI Resume Builder • Gamified Learning
+        </p>
+
+        <!-- TYPING LINE -->
+        <p class="typing-line">
+
+          <span class="green">
+            prince@portfolio
+          </span>
+
+          :
+          <span class="blue">
+            ~
+          </span>
+
+          $
+          <span class="terminal-typing"></span>
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+  <!-- STATS -->
+
+<section class="stats">
+
+  <div class="container stats-container">
+
+    <!-- ITEM -->
+    <div class="stat-box">
+      <h1>
+        <span class="counter" data-target="15">
+          0
+        </span>+
+      </h1>
+
+      <p>
+        Projects Completed
+      </p>
+
+    </div>
+
+    <!-- ITEM -->
+    <div class="stat-box">
+
+      <h1>
+        <span class="counter" data-target="10">
+          0
+        </span>+
+      </h1>
+
+      <p>
+        Technologies Learned
+      </p>
+
+    </div>
+
+    <!-- ITEM -->
+    <div class="stat-box">
+      <h1>
+        <span class="counter" data-target="15">
+          0
+        </span>+
+      </h1>
+
+      <p>
+        AI Projects
+      </p>
+
+    </div>
+
+    <!-- ITEM -->
+    <div class="stat-box">
+
+      <h1>
+        <span class="counter" data-target="100">
+          0
+        </span>+
+      </h1>
+
+      <p>
+        Hours of Coding
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- RESUME SECTION -->
+
+<section class="resume-section">
+
+  <div class="container">
+
+    <div class="resume-card">
+
+      <!-- LEFT -->
+      <div class="resume-content">
+
+        <span class="section-tag">
+          Resume
+        </span>
+
+        <h1>
+          Download My
+          <span>Resume</span>
+        </h1>
+
+        <p>
+          Explore my skills, projects,
+          and development journey
+          through my professional resume.
+        </p>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div class="resume-buttons">
+
+        <!-- DOWNLOAD -->
+        <a
+          href="assets/resume.pdf"
+          download
+          class="btn"
+        >
+
+          <i class="fa-solid fa-download"></i>
+
+          Download CV
+
+        </a>
+
+        <!-- VIEW -->
+        <a
+          href="assets/resume.pdf"
+          target="_blank"
+          class="btn outline"
+        >
+
+          <i class="fa-solid fa-eye"></i>
+
+          View Resume
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- GITHUB SECTION -->
+
+<section class="github-section">
+
+  <div class="container">
+
+    <span class="section-tag">
+      GitHub Profile
+    </span>
+
+    <div class="github-card">
+
+      <!-- LEFT -->
+      <div class="github-profile">
+
+        <img
+          id="github-avatar"
+          src=""
+          alt="github"
+        >
+
+        <div>
+
+          <h2 id="github-name">
+            Loading...
+          </h2>
+
+          <p id="github-bio">
+            Fetching GitHub profile...
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- STATS -->
+      <div class="github-stats">
+
+        <div class="github-box">
+
+          <h1 id="repo-count">
+            0
+          </h1>
+
+          <p>
+            Repositories
+          </p>
+
+        </div>
+
+        <div class="github-box">
+
+          <h1 id="followers">
+            0
+          </h1>
+
+          <p>
+            Followers
+          </p>
+
+        </div>
+
+        <div class="github-box">
+
+          <h1 id="following">
+            0
+          </h1>
+
+          <p>
+            Following
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- REPOSITORIES -->
+    <div
+      class="repo-grid"
+      id="repoGrid"
+    >
+    </div>
+
+  </div>
+
+</section>
+
+<!-- VISITOR COUNTER -->
+
+<section class="visitor-section">
+
+  <div class="container">
+
+    <div class="visitor-card">
+
+      <!-- ICON -->
+      <div class="visitor-icon">
+
+        <i class="fa-solid fa-chart-line"></i>
+
+      </div>
+
+      <!-- CONTENT -->
+      <div class="visitor-content">
+
+        <h2>
+          Portfolio Visitors
+        </h2>
+
+        <h1 id="visitor-count">
+          0
+        </h1>
+
+        <p>
+          People have visited
+          your portfolio 🚀
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div>
+        <h2>Prince.</h2>
+        <p>
+          Building AI-powered educational
+          platforms and modern digital experiences.
+        </p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Prince Kumar | All Rights Reserved
+    </div>
+  </footer>
+
+  <!-- AI CHATBOT -->
+
+<div class="chatbot">
+
+  <!-- TOGGLE BUTTON -->
+  <button class="chat-toggle">
+
+    <i class="fa-solid fa-robot"></i>
+
+  </button>
+
+  <!-- CHAT BOX -->
+  <div class="chat-box">
+
+    <!-- TOP -->
+    <div class="chat-top">
+
+      <h3>
+        AI Assistant
+      </h3>
+
+      <button class="close-chat">
+
+        <i class="fa-solid fa-xmark"></i>
+
+      </button>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="chat-body">
+
+      <div class="bot-message">
+
+        👋 Hi, I'm Prince's AI Assistant.
+        Ask me anything about projects,
+        skills, or contact info.
+
+      </div>
+
+    </div>
+
+    <!-- INPUT -->
+    <div class="chat-input">
+
+      <input
+        type="text"
+        placeholder="Ask something..."
+      >
+
+      <button>
+
+        <i class="fa-solid fa-paper-plane"></i>
+
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+<!-- MUSIC PLAYER -->
+
+<div class="music-player">
+
+  <button id="music-toggle">
+
+    <i class="fa-solid fa-music"></i>
+
+  </button>
+
+  <audio
+    id="background-music"
+    loop
+  >
+
+    <source
+      src="assets/music.mp3"
+      type="audio/mp3"
+    >
+
+  </audio>
+
+</div>
+
+<!-- VOICE ASSISTANT -->
+
+<div class="voice-assistant">
+
+  <button id="voice-btn">
+
+    <i class="fa-solid fa-microphone"></i>
+
+  </button>
+
+</div>
+
+  <!-- JS -->
+  <script src="js/home.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/loader.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/chatbot.js"></script>
+  <script src="js/github.js"></script>
+  <script src="js/transition.js"></script>
+  <script src="js/matrix.js"></script>
+  <script src="js/music.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/visitor.js"></script>
+  <script src="js/threebg.js"></script>
+  <script src="js/trail.js"></script>
+  <script src="js/voice.js"></script>
+
+</body>
+</html>

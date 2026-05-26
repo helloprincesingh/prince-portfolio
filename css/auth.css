@@ -1,0 +1,116 @@
+/* AUTH */
+.auth-section{
+
+  min-height:100vh;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:40px;
+
+}
+
+/* CARD */
+.auth-card{
+
+  width:100%;
+  max-width:450px;
+
+  padding:50px;
+
+  border-radius:30px;
+
+  background:
+  rgba(255,255,255,0.04);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(20px);
+
+  text-align:center;
+
+}
+
+/* TITLE */
+.auth-card h1{
+
+  font-size:42px;
+
+  margin-bottom:15px;
+
+}
+
+.auth-card p{
+
+  color:#cbd5e1;
+
+  margin-bottom:35px;
+
+}
+
+/* INPUT */
+.input-group{
+
+  margin-bottom:25px;
+
+}
+
+.input-group input{
+
+  width:100%;
+
+  padding:18px 20px;
+
+  border-radius:15px;
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  outline:none;
+
+  background:
+  rgba(255,255,255,0.03);
+
+  color:white;
+
+}
+
+/* GOOGLE */
+.google-btn{
+
+  width:100%;
+
+  padding:18px;
+
+  margin-top:20px;
+
+  border:none;
+
+  border-radius:15px;
+
+  cursor:pointer;
+
+  background:white;
+
+  color:#111827;
+
+  font-size:16px;
+
+}
+
+/* LINK */
+.auth-link{
+
+  margin-top:25px;
+
+}
+
+.auth-link a{
+
+  color:#8b5cf6;
+
+  text-decoration:none;
+
+}

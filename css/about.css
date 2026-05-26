@@ -1,0 +1,427 @@
+/* ABOUT SECTION */
+.about{
+
+  min-height:100vh;
+
+  display:flex;
+  align-items:center;
+
+}
+
+.about-container{
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:80px;
+
+}
+
+/* IMAGE */
+.about-image{
+
+  flex:1;
+
+  position:relative;
+
+  display:flex;
+  justify-content:center;
+
+}
+
+.about-image img{
+
+  width:400px;
+
+  border-radius:30px;
+
+  position:relative;
+
+  z-index:2;
+
+}
+
+/* GLOW */
+.glow-circle{
+
+  position:absolute;
+
+  width:350px;
+  height:350px;
+
+  background:#7c3aed;
+
+  filter:blur(100px);
+
+  opacity:0.5;
+
+  border-radius:50%;
+}
+
+/* CONTENT */
+.about-content{
+  flex:1;
+}
+
+.section-tag{
+
+  display:inline-block;
+
+  padding:8px 18px;
+
+  background:#7c3aed22;
+
+  border:1px solid #7c3aed55;
+
+  border-radius:30px;
+
+  color:#a78bfa;
+
+  margin-bottom:20px;
+
+}
+
+/* TITLE */
+.about-content h1{
+
+  font-size:60px;
+
+  margin-bottom:25px;
+
+}
+
+.about-content h1 span{
+  color:#8b5cf6;
+}
+
+/* TEXT */
+.about-content p{
+
+  line-height:1.9;
+
+  color:#cbd5e1;
+
+  margin-bottom:20px;
+
+}
+
+body.light .about-content p{
+  color:#475569;
+}
+
+/* CARDS */
+.about-cards{
+
+  margin-top:40px;
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(3,1fr);
+
+  gap:25px;
+
+}
+
+.about-card{
+
+  padding:30px;
+
+  border-radius:20px;
+
+  background:
+  rgba(255,255,255,0.03);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(20px);
+
+  transition:0.3s;
+
+}
+
+body.light .about-card{
+
+  background:white;
+
+  border:
+  1px solid #e2e8f0;
+
+}
+
+.about-card:hover{
+
+  transform:translateY(-8px);
+
+  border-color:#8b5cf6;
+
+}
+
+.about-card i{
+
+  font-size:35px;
+
+  color:#8b5cf6;
+
+  margin-bottom:20px;
+
+}
+
+.about-card h3{
+
+  margin-bottom:15px;
+
+}
+
+/* SKILLS */
+.skills{
+
+  padding-top:0;
+
+}
+
+.skills-title{
+
+  font-size:55px;
+
+  margin:
+  20px 0 50px;
+
+}
+
+.skills-title span{
+  color:#8b5cf6;
+}
+
+/* GRID */
+.skills-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(4,1fr);
+
+  gap:25px;
+
+}
+
+/* SKILL CARD */
+.skill-card{
+
+  padding:25px;
+
+  border-radius:18px;
+
+  text-align:center;
+
+  font-size:20px;
+  font-weight:500;
+
+  background:
+  rgba(255,255,255,0.03);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(20px);
+
+  transition:0.3s;
+
+}
+
+body.light .skill-card{
+
+  background:white;
+
+  border:
+  1px solid #e2e8f0;
+
+}
+
+.skill-card:hover{
+
+  transform:translateY(-8px);
+
+  border-color:#8b5cf6;
+
+  box-shadow:
+  0 10px 30px #7c3aed33;
+
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+  .about-container{
+
+    flex-direction:column;
+
+    text-align:center;
+
+  }
+
+  .about-content h1{
+    font-size:45px;
+  }
+
+  .about-cards{
+
+    grid-template-columns:1fr;
+
+  }
+
+  .skills-grid{
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+  }
+
+  .about-image img{
+    width:300px;
+  }
+
+}
+
+/* SKILL BARS */
+.skill-bars{
+
+  margin-top:70px;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:30px;
+
+}
+
+/* ITEM */
+.skill-progress{
+
+  width:100%;
+
+}
+
+/* INFO */
+.skill-info{
+
+  display:flex;
+  justify-content:space-between;
+
+  margin-bottom:12px;
+
+}
+
+.skill-info h3{
+
+  font-size:20px;
+
+}
+
+.skill-info span{
+
+  color:#8b5cf6;
+
+}
+
+/* LINE */
+.progress-line{
+
+  width:100%;
+  height:14px;
+
+  border-radius:20px;
+
+  overflow:hidden;
+
+  background:
+  rgba(255,255,255,0.08);
+
+}
+
+/* FILL */
+.progress-fill{
+
+  display:block;
+
+  height:100%;
+
+  width:0;
+
+  border-radius:20px;
+  animation-play-state:paused;
+  background:
+  linear-gradient(
+    90deg,
+    #7c3aed,
+    #a855f7
+  );
+
+  box-shadow:
+  0 0 20px #7c3aed55;
+
+}
+
+/* ANIMATION */
+.html-progress{
+
+  animation:
+  htmlFill 2s forwards;
+
+}
+
+.css-progress{
+
+  animation:
+  cssFill 2s forwards;
+
+}
+
+.js-progress{
+
+  animation:
+  jsFill 2s forwards;
+
+}
+
+.react-progress{
+
+  animation:
+  reactFill 2s forwards;
+
+}
+
+/* KEYFRAMES */
+@keyframes htmlFill{
+
+  to{
+    width:95%;
+  }
+
+}
+
+@keyframes cssFill{
+
+  to{
+    width:90%;
+  }
+
+}
+
+@keyframes jsFill{
+
+  to{
+    width:85%;
+  }
+
+}
+
+@keyframes reactFill{
+
+  to{
+    width:80%;
+  }
+
+}

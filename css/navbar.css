@@ -1,0 +1,155 @@
+/* HEADER & NAVBAR STYLING */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(2, 6, 23, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+body.light .header {
+  background: rgba(248, 250, 252, 0.7);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #8b5cf6;
+  text-decoration: none;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.navbar {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #cbd5e1;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+body.light .navbar a {
+  color: #475569;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #8b5cf6;
+}
+
+/* Underline slide effect for active links */
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #8b5cf6;
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+  width: 100%;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#theme-toggle,
+#menu-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+body.light #theme-toggle,
+body.light #menu-btn {
+  border: 1px solid #e2e8f0;
+  background: white;
+  color: #111827;
+}
+
+#theme-toggle:hover,
+#menu-btn:hover {
+  background: #8b5cf6;
+  color: white;
+  border-color: #8b5cf6;
+}
+
+#menu-btn {
+  display: none;
+}
+
+/* Responsive navbar */
+@media (max-width: 900px) {
+  #menu-btn {
+    display: flex;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background: rgba(2, 6, 23, 0.95);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    flex-direction: column;
+    padding: 50px 0;
+    gap: 40px;
+    transition: left 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    z-index: 999;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  body.light .navbar {
+    background: rgba(248, 250, 252, 0.95);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .navbar.active {
+    left: 0;
+  }
+
+  .navbar a {
+    font-size: 20px;
+  }
+}
