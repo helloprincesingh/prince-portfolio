@@ -35,62 +35,97 @@
 </head>
 
 <body>
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light") {
+        document.body.classList.add("light");
+      }
+    })();
+  </script>
+
   <!-- CURSOR TRAIL -->
+  <div id="trail-container"></div>
 
-<div id="trail-container"></div>
   <!-- PAGE TRANSITION -->
+  <div class="page-transition"></div>
 
-<div class="page-transition"></div>
   <!-- SPOTLIGHT -->
+  <div class="spotlight"></div>
 
-<div class="spotlight"></div>
   <!-- PROGRESS BAR -->
+  <div class="progress-bar"></div>
 
-<div class="progress-bar"></div>
   <!-- LOADER -->
+  <div class="loader-wrapper">
 
-<div class="loader-wrapper">
+    <div class="loader">
 
-  <div class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
 
-    <span></span>
-    <span></span>
-    <span></span>
+    </div>
 
   </div>
 
-</div>
   <!-- PARTICLES -->
+  <div id="particles-js"></div>
 
-<div id="particles-js"></div>
   <!-- CUSTOM CURSOR -->
+  <div class="cursor"></div>
 
-<div class="cursor"></div>
-
-<div class="cursor-blur"></div>
+  <div class="cursor-blur"></div>
 
   <!-- HEADER -->
   <header class="header">
+
     <div class="nav-container">
-      <a href="index.html" class="logo">Prince.</a>
+
+      <a href="index.html" class="logo">
+        Prince.
+      </a>
+
       <!-- NAVBAR -->
       <nav class="navbar" id="navbar">
+
         <a href="index.html">Home</a>
+
         <a href="about.html">About</a>
+
         <a href="projects.html">Projects</a>
+
         <a href="blog.html">Blog</a>
+
         <a href="contact.html">Contact</a>
+
       </nav>
+
       <!-- RIGHT -->
       <div class="nav-right">
-        <button id="theme-toggle" aria-label="Toggle Theme">
+
+        <button
+          id="theme-toggle"
+          aria-label="Toggle Theme"
+        >
+
           <i class="fa-solid fa-moon"></i>
+
         </button>
-        <button id="menu-btn" aria-label="Toggle Menu">
+
+        <button
+          id="menu-btn"
+          aria-label="Toggle Menu"
+        >
+
           <i class="fa-solid fa-bars"></i>
+
         </button>
+
       </div>
+
     </div>
+
   </header>
 
   <!-- PROJECTS -->
@@ -102,6 +137,7 @@
         My Work
       </span>
 
+      <!-- TOP -->
       <div class="project-top">
 
         <h1>
@@ -114,411 +150,302 @@
 
       </div>
 
-      <!-- GRID -->
-      <div class="projects-grid">
-
-        <!-- CARD 1 -->
-        <div class="project-card" data-title="EduCrush" data-description="AI-powered educational platform with quizzes, notes, and career guidance." data-image="https://images.unsplash.com/photo-1516321318423-f06f85e504b3" data-tech="React,Node.js,MongoDB">
-
-          <div class="project-image">
-
-            <img
-              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
-              alt="project"
-            >
-
-          </div>
-
-          <div class="project-content">
-
-            <h2>
-              EduCrush
-            </h2>
-
-            <p>
-              AI-powered educational platform
-              with quizzes, notes, and career guidance.
-            </p>
-
-            <!-- TECH STACK -->
-            <div class="tech-stack">
-
-              <span>React</span>
-              <span>Node.js</span>
-              <span>MongoDB</span>
-
-            </div>
-
-            <!-- BUTTONS -->
-            <div class="project-buttons">
-
-              <a href="#" class="btn">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                Live Demo
-              </a>
-
-              <a href="#" class="icon-btn">
-
-                <i class="fa-brands fa-github"></i>
-
-              </a>
-
-            </div>
-
-          </div>
-
-        </div>
-
-        <!-- CARD 2 -->
-        <div class="project-card" data-title="AI Resume Builder" data-description="Smart resume generator with AI-assisted content creation." data-image="https://images.unsplash.com/photo-1498050108023-c5249f4df085" data-tech="HTML,CSS,JavaScript">
-
-          <div class="project-image">
-
-            <img
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"
-              alt="project"
-            >
-
-          </div>
-
-          <div class="project-content">
-
-            <h2>
-              AI Resume Builder
-            </h2>
-
-            <p>
-              Smart resume generator with
-              AI-assisted content creation.
-            </p>
-
-            <div class="tech-stack">
-
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
-
-            </div>
-
-            <div class="project-buttons">
-
-              <a href="#" class="btn">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                Live Demo
-              </a>
-
-              <a href="#" class="icon-btn">
-
-                <i class="fa-brands fa-github"></i>
-
-              </a>
-
-            </div>
-
-          </div>
-
-        </div>
-
-        <!-- CARD 3 -->
-        <div class="project-card" data-title="Gamified Learning Platform" data-description="Interactive learning platform with coding puzzles and achievements." data-image="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" data-tech="Firebase,React,Tailwind">
-
-          <div class="project-image">
-
-            <img
-              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
-              alt="project"
-            >
-
-          </div>
-
-          <div class="project-content">
-
-            <h2>
-              Gamified Learning Platform
-            </h2>
-
-            <p>
-              Interactive learning platform
-              with coding puzzles and achievements.
-            </p>
-
-            <div class="tech-stack">
-
-              <span>Firebase</span>
-              <span>React</span>
-              <span>Tailwind</span>
-
-            </div>
-
-            <div class="project-buttons">
-
-              <a href="#" class="btn">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                Live Demo
-              </a>
-
-              <a href="#" class="icon-btn">
-
-                <i class="fa-brands fa-github"></i>
-
-              </a>
-
-            </div>
-
-          </div>
-
-        </div>
-
-        <!-- CARD 4 -->
-        <div class="project-card" data-title="Admission Counselling" data-description="Student guidance platform for admissions and career support." data-image="https://images.unsplash.com/photo-1552664730-d307ca884978" data-tech="HTML,CSS,JavaScript">
-
-          <div class="project-image">
-
-            <img
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978"
-              alt="project"
-            >
-
-          </div>
-
-          <div class="project-content">
-
-            <h2>
-              Admission Counselling
-            </h2>
-
-            <p>
-              Student guidance platform
-              for admissions and career support.
-            </p>
-
-            <div class="tech-stack">
-
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
-
-            </div>
-
-            <div class="project-buttons">
-
-              <a href="#" class="btn">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                Live Demo
-              </a>
-
-              <a href="#" class="icon-btn">
-
-                <i class="fa-brands fa-github"></i>
-
-              </a>
-
-            </div>
-
-          </div>
-
-        </div>
-
+      <!-- FILTER BUTTONS -->
+      <div class="project-filters">
+
+        <button
+          class="filter-btn active"
+          data-filter="all"
+        >
+          All
+        </button>
+
+        <button
+          class="filter-btn"
+          data-filter="ai"
+        >
+          AI Projects
+        </button>
+
+        <button
+          class="filter-btn"
+          data-filter="web"
+        >
+          Web Apps
+        </button>
+
+        <button
+          class="filter-btn"
+          data-filter="ui"
+        >
+          UI/UX
+        </button>
+
+      </div>
+
+      <!-- PROJECTS GRID -->
+      <!-- IMPORTANT:
+           Dynamic projects from admin dashboard
+           will come here automatically
+      -->
+
+      <div
+        class="projects-grid"
+        id="projects-container"
+      >
       </div>
 
     </div>
 
   </section>
 
-<!-- PROJECT MODAL -->
+  <!-- PROJECT MODAL -->
+  <div
+    class="project-modal"
+    id="projectModal"
+  >
 
-<div class="project-modal" id="projectModal">
+    <!-- OVERLAY -->
+    <div class="modal-overlay"></div>
 
-  <!-- OVERLAY -->
-  <div class="modal-overlay"></div>
+    <!-- CONTENT -->
+    <div class="modal-content">
 
-  <!-- CONTENT -->
-  <div class="modal-content">
-
-    <!-- CLOSE -->
-    <button class="close-modal" id="closeModal">
-
-      <i class="fa-solid fa-xmark"></i>
-
-    </button>
-
-    <!-- IMAGE -->
-    <img
-      id="modalImage"
-      src=""
-      alt="project"
-    >
-
-    <!-- TEXT -->
-    <div class="modal-text">
-
-      <h2 id="modalTitle">
-        Project Title
-      </h2>
-
-      <p id="modalDescription">
-        Project Description
-      </p>
-
-      <!-- TECH -->
-      <div
-        class="modal-tech"
-        id="modalTech"
+      <!-- CLOSE -->
+      <button
+        class="close-modal"
+        id="closeModal"
       >
-      </div>
-
-      <!-- BUTTONS -->
-      <div class="modal-buttons">
-
-        <a href="#" class="btn">
-          Live Demo
-        </a>
-
-        <a href="#" class="btn outline">
-          GitHub
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-container">
-      <div>
-        <h2>Prince.</h2>
-        <p>
-          Building AI-powered educational
-          platforms and modern digital experiences.
-        </p>
-      </div>
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="blog.html">Blog</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      © 2026 Prince Kumar | All Rights Reserved
-    </div>
-  </footer>
-
-  <!-- AI CHATBOT -->
-
-<div class="chatbot">
-
-  <!-- TOGGLE BUTTON -->
-  <button class="chat-toggle">
-
-    <i class="fa-solid fa-robot"></i>
-
-  </button>
-
-  <!-- CHAT BOX -->
-  <div class="chat-box">
-
-    <!-- TOP -->
-    <div class="chat-top">
-
-      <h3>
-        AI Assistant
-      </h3>
-
-      <button class="close-chat">
 
         <i class="fa-solid fa-xmark"></i>
 
       </button>
 
-    </div>
+      <!-- IMAGE -->
+      <img
+        id="modalImage"
+        src=""
+        alt="project"
+      >
 
-    <!-- BODY -->
-    <div class="chat-body">
+      <!-- TEXT -->
+      <div class="modal-text">
 
-      <div class="bot-message">
+        <h2 id="modalTitle">
+          Project Title
+        </h2>
 
-        👋 Hi, I'm Prince's AI Assistant.
-        Ask me anything about projects,
-        skills, or contact info.
+        <p id="modalDescription">
+          Project Description
+        </p>
+
+        <!-- TECH -->
+        <div
+          class="modal-tech"
+          id="modalTech"
+        >
+        </div>
+
+        <!-- BUTTONS -->
+        <div class="modal-buttons">
+
+          <a href="#" class="btn">
+            Live Demo
+          </a>
+
+          <a href="#" class="btn outline">
+            GitHub
+          </a>
+
+        </div>
+        
 
       </div>
 
     </div>
 
-    <!-- INPUT -->
-    <div class="chat-input">
+  </div>
 
-      <input
-        type="text"
-        placeholder="Ask something..."
-      >
+  <!-- FOOTER -->
+  <footer class="footer">
 
-      <button>
+    <div class="container footer-container">
 
-        <i class="fa-solid fa-paper-plane"></i>
+      <div>
 
-      </button>
+        <h2>
+          Prince.
+        </h2>
+
+        <p>
+          Building AI-powered educational
+          platforms and modern digital experiences.
+        </p>
+
+      </div>
+
+      <div class="footer-links">
+
+        <a href="index.html">Home</a>
+
+        <a href="about.html">About</a>
+
+        <a href="projects.html">Projects</a>
+
+        <a href="blog.html">Blog</a>
+
+        <a href="contact.html">Contact</a>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      © 2026 Prince Kumar |
+      All Rights Reserved
+
+    </div>
+
+  </footer>
+
+  <!-- AI CHATBOT -->
+  <div class="chatbot">
+
+    <!-- TOGGLE -->
+    <button class="chat-toggle">
+
+      <i class="fa-solid fa-robot"></i>
+
+    </button>
+
+    <!-- BOX -->
+    <div class="chat-box">
+
+      <!-- TOP -->
+      <div class="chat-top">
+
+        <h3>
+          AI Assistant
+        </h3>
+
+        <button class="close-chat">
+
+          <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+      </div>
+
+      <!-- BODY -->
+      <div class="chat-body">
+
+        <div class="bot-message">
+
+          👋 Hi, I'm Prince's AI Assistant.
+          Ask me anything about projects,
+          skills, or contact info.
+
+        </div>
+
+      </div>
+
+      <!-- INPUT -->
+      <div class="chat-input">
+
+        <input
+          type="text"
+          placeholder="Ask something..."
+        >
+
+        <button>
+
+          <i class="fa-solid fa-paper-plane"></i>
+
+        </button>
+
+      </div>
 
     </div>
 
   </div>
 
-</div>
-<!-- MUSIC PLAYER -->
+  <!-- MUSIC PLAYER -->
+  <div class="music-player">
 
-<div class="music-player">
+    <button id="music-toggle">
 
-  <button id="music-toggle">
+      <i class="fa-solid fa-music"></i>
 
-    <i class="fa-solid fa-music"></i>
+    </button>
 
-  </button>
-
-  <audio
-    id="background-music"
-    loop
-  >
-
-    <source
-      src="assets/music.mp3"
-      type="audio/mp3"
+    <audio
+      id="background-music"
+      loop
     >
 
-  </audio>
+      <source
+        src="assets/music.mp3"
+        type="audio/mp3"
+      >
 
-</div>
+    </audio>
 
-<!-- VOICE ASSISTANT -->
+  </div>
 
-<div class="voice-assistant">
+  <!-- VOICE ASSISTANT -->
+  <div class="voice-assistant">
 
-  <button id="voice-btn">
+    <button id="voice-btn">
 
-    <i class="fa-solid fa-microphone"></i>
+      <i class="fa-solid fa-microphone"></i>
 
-  </button>
+    </button>
 
-</div>
+  </div>
 
   <!-- JS -->
   <script src="js/navbar.js"></script>
+
   <script src="js/cursor.js"></script>
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+  <script src="js/particles.min.js"></script>
+
   <script src="js/particles.js"></script>
+
   <script src="js/loader.js"></script>
+
   <script src="js/progress.js"></script>
+
+  <!-- SUPABASE -->
+  <script src="js/supabase.min.js"></script>
+
+  <script src="js/supabase.js"></script>
+
+  <!-- PROJECTS -->
   <script src="js/projects.js"></script>
+
+  <!-- CHATBOT -->
   <script src="js/chatbot.js"></script>
+
+  <!-- PAGE TRANSITION -->
   <script src="js/transition.js"></script>
+
+  <!-- MUSIC -->
   <script src="js/music.js"></script>
+
+  <!-- CURSOR TRAIL -->
   <script src="js/trail.js"></script>
+
+  <!-- VOICE -->
   <script src="js/voice.js"></script>
 
+  <!-- AUTH -->
+  <script
+    type="module"
+    src="js/auth-nav.js"
+  ></script>
+
 </body>
+
 </html>

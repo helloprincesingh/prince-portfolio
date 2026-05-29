@@ -76,14 +76,6 @@ body.light .hero-content p{
 
 }
 
-.outline{
-
-  background:transparent;
-
-  border:2px solid #8b5cf6;
-
-}
-
 .hero-image{
 
   flex:1;
@@ -954,3 +946,239 @@ body.light .visitor-content p{
   }
 
 }
+
+/* PARTICLE TEXT */
+
+.particle-text-section{
+
+  position:relative;
+
+  width:100%;
+
+  min-height:500px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+
+}
+
+/* CANVAS */
+#particle-text{
+
+  width:100%;
+
+  height:500px;
+
+  display:block;
+
+}
+
+/* CANVAS */
+#particle-text{
+
+  width:100%;
+  height:100%;
+
+}
+
+/* HOLOGRAM SECTION */
+
+.hologram-section{
+
+  padding:
+  100px 0;
+
+}
+
+/* GRID */
+.hologram-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(3,1fr);
+
+  gap:35px;
+
+}
+
+/* CARD */
+
+
+.hologram-card{
+
+  position:relative;
+
+  overflow:hidden;
+
+  padding:
+  45px 35px;
+
+  border-radius:30px;
+
+  background:
+  rgba(255,255,255,0.04);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(25px);
+
+  transition:0.4s;
+
+  animation:
+  holoFloat 4s ease-in-out infinite;
+box-shadow:
+inset 0 0 20px #7c3aed22;
+}
+
+/* LIGHT */
+body.light .hologram-card{
+
+  background:white;
+
+  border:
+  1px solid #e2e8f0;
+
+}
+
+/* GLOW */
+.hologram-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+  linear-gradient(
+
+    135deg,
+
+    transparent,
+
+    rgba(168,85,247,0.12),
+
+    transparent
+
+  );
+
+  opacity:0;
+
+  transition:0.4s;
+
+}
+
+/* HOVER */
+.hologram-card:hover{
+
+  transform:
+  translateY(-15px)
+  scale(1.03);
+
+  border-color:#8b5cf6;
+
+  box-shadow:
+  0 20px 50px #7c3aed33;
+
+}
+
+.hologram-card:hover::before{
+
+  opacity:1;
+
+}
+
+/* ICON */
+.holo-icon{
+
+  width:80px;
+  height:80px;
+
+  border-radius:20px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  margin-bottom:30px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #7c3aed,
+    #a855f7
+  );
+
+  color:white;
+
+  font-size:34px;
+
+  box-shadow:
+  0 0 30px #7c3aed55;
+
+}
+
+/* TITLE */
+.hologram-card h2{
+
+  font-size:30px;
+
+  margin-bottom:18px;
+
+}
+
+/* TEXT */
+.hologram-card p{
+
+  line-height:1.9;
+
+  color:#cbd5e1;
+
+}
+
+body.light .hologram-card p{
+  color:#475569;
+}
+
+/* FLOAT */
+@keyframes holoFloat{
+
+  0%{
+
+    transform:
+    translateY(0);
+
+  }
+
+  50%{
+
+    transform:
+    translateY(-12px);
+
+  }
+
+  100%{
+
+    transform:
+    translateY(0);
+
+  }
+
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+  .hologram-grid{
+
+    grid-template-columns:1fr;
+
+  }
+
+}
+

@@ -35,6 +35,14 @@
 </head>
 
 <body>
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light") {
+        document.body.classList.add("light");
+      }
+    })();
+  </script>
   <!-- CURSOR TRAIL -->
   <div id="trail-container"></div>
 
@@ -321,7 +329,7 @@
   <!-- JS -->
   <script src="js/navbar.js"></script>
   <script src="js/cursor.js"></script>
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="js/particles.min.js"></script>
   <script src="js/particles.js"></script>
   <script src="js/loader.js"></script>
   <script src="js/progress.js"></script>
@@ -330,6 +338,6 @@
   <script src="js/music.js"></script>
   <script src="js/trail.js"></script>
   <script src="js/voice.js"></script>
-
+  <script type="module" src="js/auth-nav.js"></script>
 </body>
 </html>

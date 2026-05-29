@@ -1,115 +1,117 @@
 /* MATRIX EFFECT */
 
-const canvas =
-document.getElementById(
-  "matrix"
-);
-
-if (canvas && canvas.getContext) {
-
-const ctx =
-canvas.getContext("2d");
-
-/* SIZE */
-canvas.width =
-window.innerWidth;
-
-canvas.height =
-window.innerHeight;
-
-/* LETTERS */
-const letters =
-"01アイウエオカキクケコABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-const chars =
-letters.split("");
-
-const fontSize = 16;
-
-const columns =
-canvas.width / fontSize;
-
-const drops = [];
-
-/* INIT */
-for(let i=0;i<columns;i++){
-
-  drops[i] = 1;
-
-}
-
-/* DRAW */
-function draw(){
-
-  ctx.fillStyle =
-  "rgba(2,6,23,0.08)";
-
-  ctx.fillRect(
-    0,
-    0,
-    canvas.width,
-    canvas.height
+(function() {
+  const canvas =
+  document.getElementById(
+    "matrix"
   );
 
-  ctx.fillStyle =
-  "#00ff88";
+  if (canvas && canvas.getContext) {
 
-  ctx.font =
-  fontSize + "px monospace";
+  const ctx =
+  canvas.getContext("2d");
 
-  for(let i=0;i<drops.length;i++){
+  /* SIZE */
+  canvas.width =
+  window.innerWidth;
 
-    const text =
-    chars[
-      Math.floor(
-        Math.random() * chars.length
-      )
-    ];
+  canvas.height =
+  window.innerHeight;
 
-    ctx.fillText(
+  /* LETTERS */
+  const letters =
+  "01アイウエオカキクケコABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-      text,
+  const chars =
+  letters.split("");
 
-      i * fontSize,
+  const fontSize = 16;
 
-      drops[i] * fontSize
+  const columns =
+  canvas.width / fontSize;
 
+  const drops = [];
+
+  /* INIT */
+  for(let i=0;i<columns;i++){
+
+    drops[i] = 1;
+
+  }
+
+  /* DRAW */
+  function draw(){
+
+    ctx.fillStyle =
+    "rgba(2,6,23,0.08)";
+
+    ctx.fillRect(
+      0,
+      0,
+      canvas.width,
+      canvas.height
     );
 
-    if(
+    ctx.fillStyle =
+    "#00ff88";
 
-      drops[i] * fontSize >
-      canvas.height &&
+    ctx.font =
+    fontSize + "px monospace";
 
-      Math.random() > 0.975
+    for(let i=0;i<drops.length;i++){
 
-    ){
+      const text =
+      chars[
+        Math.floor(
+          Math.random() * chars.length
+        )
+      ];
 
-      drops[i] = 0;
+      ctx.fillText(
+
+        text,
+
+        i * fontSize,
+
+        drops[i] * fontSize
+
+      );
+
+      if(
+
+        drops[i] * fontSize >
+        canvas.height &&
+
+        Math.random() > 0.975
+
+      ){
+
+        drops[i] = 0;
+
+      }
+
+      drops[i]++;
 
     }
 
-    drops[i]++;
-
   }
 
-}
+  /* SPEED */
+  setInterval(draw,35);
 
-/* SPEED */
-setInterval(draw,35);
+  /* RESIZE */
+  window.addEventListener(
+    "resize",
+    ()=>{
 
-/* RESIZE */
-window.addEventListener(
-  "resize",
-  ()=>{
+      canvas.width =
+      window.innerWidth;
 
-    canvas.width =
-    window.innerWidth;
+      canvas.height =
+      window.innerHeight;
 
-    canvas.height =
-    window.innerHeight;
+    }
+  );
 
   }
-);
-
-}
+})();

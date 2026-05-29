@@ -66,6 +66,10 @@ body.light .footer-links a {
   font-size: 14px;
 }
 
+body.light .footer-bottom {
+  color: #64748b;
+}
+
 /* MOBILE */
 @media (max-width: 900px) {
   .footer-container {

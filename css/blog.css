@@ -144,6 +144,10 @@ body.light .blog-card{
 
 }
 
+body.light .blog-category{
+  color:#7c3aed;
+}
+
 /* TITLE */
 .blog-content h2{
 
@@ -181,6 +185,10 @@ body.light .blog-content p{
 
   color:#94a3b8;
 
+}
+
+body.light .blog-footer span{
+  color:#64748b;
 }
 
 .blog-footer a{

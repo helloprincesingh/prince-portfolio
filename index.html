@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<link rel="stylesheet" href="css/projects.css">
 <head>
 
   <meta charset="UTF-8">
@@ -35,6 +35,17 @@
 </head>
 
 <body>
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light") {
+        document.body.classList.add("light");
+      }
+    })();
+  </script>
+  <!-- GALAXY GLOW -->
+
+<div class="galaxy-glow"></div>
   <!-- CURSOR TRAIL -->
 
 <div id="trail-container"></div>
@@ -77,7 +88,7 @@
   <!-- HEADER -->
   <header class="header">
     <div class="nav-container">
-      <a href="index.html" class="logo">Prince</a>
+      <a href="index.html" class="logo">Prince.</a>
       <!-- NAVBAR -->
       <nav class="navbar" id="navbar">
         <a href="index.html">Home</a>
@@ -85,13 +96,7 @@
         <a href="projects.html">Projects</a>
         <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
-        <a href="login.html">
-          Login
-        </a>
 
-        <a href="signup.html">
-          Signup
-        </a>
 
 
       </nav>
@@ -106,8 +111,15 @@
       </div>
     </div>
   </header>
+<!-- PARTICLE TEXT -->
 
+<!-- <section class="particle-text-section">
+
+  <canvas id="particle-text"></canvas>
+
+</section> -->
   <!-- HERO -->
+   
    
   <section class="hero">
 
@@ -117,8 +129,10 @@
       <div class="hero-content">
 
         <h1>
+
           Hi, I'm
           <span>Prince Kumar</span>
+
         </h1>
 
         <h2>
@@ -126,20 +140,38 @@
           <span class="typing"></span>
         </h2>
 
-        <p>
+       <p>
+
           I build modern websites,
           AI-powered platforms,
           and educational products.
-        </p>
 
+       </p>
         <div class="hero-buttons">
 
-          <a href="projects.html" class="btn">
-            View Projects
-          </a>
+        <a
 
-          <a href="contact.html" class="btn outline">
-            Contact Me
+          href="projects.html"
+
+          class="btn"
+
+         
+        >
+          View Projects
+
+        </a>
+
+          <a
+
+              href="contact.html"
+
+              class="btn outline"
+
+             
+            >
+
+              Contact Me
+
           </a>
 
         </div>
@@ -180,7 +212,73 @@
     </div>
 
   </section>
+<!-- HOLOGRAM SECTION -->
 
+<section class="hologram-section">
+
+  <div class="container">
+
+    <div class="hologram-grid">
+
+      <!-- CARD -->
+      <div class="hologram-card">
+
+        <div class="holo-icon">
+          <i class="fa-solid fa-code"></i>
+        </div>
+
+        <h2>
+          Frontend Development
+        </h2>
+
+        <p>
+          Creating futuristic responsive
+          UI with modern technologies.
+        </p>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="hologram-card">
+
+        <div class="holo-icon">
+          <i class="fa-solid fa-brain"></i>
+        </div>
+
+        <h2>
+          AI & ML
+        </h2>
+
+        <p>
+          Building AI-powered systems
+          and smart applications.
+        </p>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="hologram-card">
+
+        <div class="holo-icon">
+          <i class="fa-solid fa-rocket"></i>
+        </div>
+
+        <h2>
+          Innovation
+        </h2>
+
+        <p>
+          Exploring futuristic interfaces
+          and immersive experiences.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
   <!-- TERMINAL -->
 
@@ -531,22 +629,20 @@
 
         <p>
           People have visited
-          your portfolio 🚀
+          your portfolio 
         </p>
 
       </div>
 
     </div>
 
-  </div>
 
-</section>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-container">
       <div>
-        <h2>Prince.</h2>
+        <h2>Prince</h2>
         <p>
           Building AI-powered educational
           platforms and modern digital experiences.
@@ -662,11 +758,12 @@
 
 </div>
 
+
   <!-- JS -->
   <script src="js/home.js"></script>
   <script src="js/navbar.js"></script>
   <script src="js/cursor.js"></script>
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="js/particles.min.js"></script>
   <script src="js/particles.js"></script>
   <script src="js/loader.js"></script>
   <script src="js/progress.js"></script>
@@ -675,11 +772,20 @@
   <script src="js/transition.js"></script>
   <script src="js/matrix.js"></script>
   <script src="js/music.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/three.min.js"></script>
   <script src="js/visitor.js"></script>
-  <script src="js/threebg.js"></script>
+
   <script src="js/trail.js"></script>
   <script src="js/voice.js"></script>
 
+  <script src="js/supabase.min.js"></script>
+  <script src="js/supabase.js"></script>
+
+  <script type="module" src="js/auth-nav.js"></script>
+  
+
+<!-- <script src="js/threebg.js"></script> -->
+<script src="js/particleText.js"></script>
+  
 </body>
 </html>

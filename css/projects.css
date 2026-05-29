@@ -1,19 +1,26 @@
-/* PROJECTS */
+/* =========================================================
+   PROJECTS SECTION
+========================================================= */
+
 .projects{
 
   min-height:100vh;
 
 }
 
-/* TOP */
+/* =========================================================
+   TOP
+========================================================= */
+
 .project-top{
 
   display:flex;
+
   justify-content:space-between;
+
   align-items:center;
 
-  margin:
-  25px 0 60px;
+  margin:25px 0 60px;
 
 }
 
@@ -24,15 +31,102 @@
 }
 
 .project-top h1 span{
+
   color:#8b5cf6;
-}
-
-/* GRID */
-.projects-grid{
-
-  perspective:1200px;
 
 }
+
+/* =========================================================
+   FILTER BUTTONS
+========================================================= */
+
+.project-filters{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:18px;
+
+  margin:40px 0 70px;
+
+  flex-wrap:wrap;
+
+}
+
+/* BUTTON */
+
+.filter-btn{
+
+  padding:14px 28px;
+
+  border:none;
+
+  border-radius:40px;
+
+  cursor:pointer;
+
+  font-size:16px;
+
+  font-weight:500;
+
+  color:white;
+
+  background:
+  rgba(255,255,255,0.05);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(20px);
+
+  transition:0.3s;
+
+}
+
+/* LIGHT MODE */
+
+body.light .filter-btn{
+
+  color:#0f172a;
+
+  background:white;
+
+  border:
+  1px solid #e2e8f0;
+
+}
+
+/* ACTIVE */
+
+.filter-btn.active{
+
+  background:
+  linear-gradient(
+    135deg,
+    #7c3aed,
+    #a855f7
+  );
+
+  box-shadow:
+  0 0 25px #7c3aed55;
+
+}
+
+/* HOVER */
+
+.filter-btn:hover{
+
+  transform:translateY(-5px);
+
+}
+
+/* =========================================================
+   GRID
+========================================================= */
+
 .projects-grid{
 
   display:grid;
@@ -42,9 +136,14 @@
 
   gap:35px;
 
+  perspective:1200px;
+
 }
 
-/* CARD */
+/* =========================================================
+   CARD
+========================================================= */
+
 .project-card{
 
   position:relative;
@@ -62,7 +161,7 @@
   backdrop-filter:blur(20px);
 
   transition:
-  transform 0.15s ease,
+  transform 0.3s ease,
   box-shadow 0.3s;
 
   transform-style:
@@ -71,6 +170,8 @@
   will-change:transform;
 
 }
+
+/* LIGHT */
 
 body.light .project-card{
 
@@ -81,6 +182,8 @@ body.light .project-card{
 
 }
 
+/* HOVER */
+
 .project-card:hover{
 
   transform:
@@ -90,170 +193,13 @@ body.light .project-card{
 
   box-shadow:
   0 15px 40px #7c3aed33;
-  
-}
-
-/* IMAGE */
-.project-image{
-
-  overflow:hidden;
 
 }
 
-.project-image img{
+/* =========================================================
+   GLOW EFFECT
+========================================================= */
 
-  width:100%;
-  height:280px;
-
-  object-fit:cover;
-
-  transition:0.5s;
-
-}
-
-.project-card:hover img{
-
-  transform:scale(1.08);
-
-}
-
-/* CONTENT */
-.project-content{
-
-  padding:30px;
-
-}
-
-.project-content h2{
-
-  font-size:32px;
-
-  margin-bottom:15px;
-
-}
-
-.project-content p{
-
-  line-height:1.8;
-
-  color:#cbd5e1;
-
-  margin-bottom:25px;
-
-}
-
-body.light .project-content p{
-  color:#475569;
-}
-
-/* TECH STACK */
-.tech-stack{
-
-  display:flex;
-  flex-wrap:wrap;
-
-  gap:12px;
-
-  margin-bottom:30px;
-
-}
-
-.tech-stack span{
-
-  padding:8px 16px;
-
-  border-radius:30px;
-
-  background:#7c3aed22;
-
-  border:
-  1px solid #7c3aed44;
-
-  color:#a78bfa;
-
-  font-size:14px;
-
-}
-
-/* BUTTONS */
-.project-buttons{
-
-  display:flex;
-  align-items:center;
-
-  gap:15px;
-
-}
-
-.icon-btn{
-
-  width:50px;
-  height:50px;
-
-  border-radius:12px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  background:#111827;
-
-  color:white;
-
-  text-decoration:none;
-
-  transition:0.3s;
-
-}
-
-.icon-btn:hover{
-
-  background:#8b5cf6;
-
-}
-
-body.light .icon-btn{
-
-  background:#f1f5f9;
-
-  color:#111827;
-
-}
-
-/* MOBILE */
-@media(max-width:900px){
-
-  .project-top{
-
-    flex-direction:column;
-    gap:25px;
-
-    text-align:center;
-
-  }
-
-  .project-top h1{
-    font-size:45px;
-  }
-
-  .projects-grid{
-
-    grid-template-columns:1fr;
-
-  }
-
-}
-
-/* 3D DEPTH */
-.project-content,
-.project-image img{
-
-  transform:
-  translateZ(30px);
-
-}
-
-/* GLOW */
 .project-card::before{
 
   content:"";
@@ -282,8 +228,191 @@ body.light .icon-btn{
 
 }
 
+/* =========================================================
+   IMAGE
+========================================================= */
 
-/* MODAL */
+.project-image{
+
+  overflow:hidden;
+
+}
+
+.project-image img{
+
+  width:100%;
+
+  height:280px;
+
+  object-fit:cover;
+
+  transition:0.5s;
+
+  transform:
+  translateZ(30px);
+
+}
+
+/* HOVER */
+
+.project-card:hover img{
+
+  transform:
+  translateZ(30px)
+  scale(1.08);
+
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.project-content{
+
+  padding:30px;
+
+  transform:
+  translateZ(30px);
+
+}
+
+.project-content h2{
+
+  font-size:32px;
+
+  margin-bottom:15px;
+
+}
+
+.project-content p{
+
+  line-height:1.8;
+
+  color:#cbd5e1;
+
+  margin-bottom:25px;
+
+}
+
+/* LIGHT */
+
+body.light .project-content p{
+
+  color:#475569;
+
+}
+
+/* =========================================================
+   TECH STACK
+========================================================= */
+
+.tech-stack{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:12px;
+
+  margin-bottom:30px;
+
+}
+
+.tech-stack span{
+
+  padding:8px 16px;
+
+  border-radius:30px;
+
+  background:#7c3aed22;
+
+  border:
+  1px solid #7c3aed44;
+
+  color:#a78bfa;
+
+  font-size:14px;
+
+}
+
+body.light .tech-stack span{
+  color:#7c3aed;
+  background:#7c3aed11;
+  border-color:#7c3aed22;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.project-buttons{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:15px;
+
+}
+
+/* ICON BUTTON */
+
+.icon-btn{
+
+  width:50px;
+
+  height:50px;
+
+  border-radius:12px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  background:#111827;
+
+  color:white;
+
+  text-decoration:none;
+
+  transition:0.3s;
+
+}
+
+/* HOVER */
+
+.icon-btn:hover{
+
+  background:#8b5cf6;
+
+}
+
+/* LIGHT */
+
+body.light .icon-btn{
+
+  background:#f1f5f9;
+
+  color:#111827;
+
+}
+
+/* =========================================================
+   FILTER HIDE
+========================================================= */
+
+.project-card.hide{
+
+  display:none;
+
+}
+
+/* =========================================================
+   MODAL
+========================================================= */
+
 .project-modal{
 
   position:fixed;
@@ -291,12 +420,15 @@ body.light .icon-btn{
   inset:0;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
   z-index:10000;
 
   opacity:0;
+
   pointer-events:none;
 
   transition:0.3s;
@@ -304,14 +436,19 @@ body.light .icon-btn{
 }
 
 /* ACTIVE */
+
 .project-modal.active{
 
   opacity:1;
+
   pointer-events:auto;
 
 }
 
-/* OVERLAY */
+/* =========================================================
+   OVERLAY
+========================================================= */
+
 .modal-overlay{
 
   position:absolute;
@@ -324,12 +461,16 @@ body.light .icon-btn{
 
 }
 
-/* CONTENT */
+/* =========================================================
+   MODAL CONTENT
+========================================================= */
+
 .modal-content{
 
   position:relative;
 
   width:90%;
+
   max-width:900px;
 
   border-radius:30px;
@@ -343,21 +484,40 @@ body.light .icon-btn{
 
   z-index:2;
 
-  animation:modalShow 0.4s ease;
+  animation:
+  modalShow 0.4s ease;
 
 }
 
+body.light .modal-content{
+  background:white;
+  border:1px solid #e2e8f0;
+}
+
+body.light .modal-text h2{
+  color:#111827;
+}
+
+body.light .modal-text p{
+  color:#475569;
+}
+
 /* IMAGE */
+
 .modal-content img{
 
   width:100%;
+
   height:350px;
 
   object-fit:cover;
 
 }
 
-/* TEXT */
+/* =========================================================
+   MODAL TEXT
+========================================================= */
+
 .modal-text{
 
   padding:35px;
@@ -382,10 +542,14 @@ body.light .icon-btn{
 
 }
 
-/* TECH */
+/* =========================================================
+   MODAL TECH
+========================================================= */
+
 .modal-tech{
 
   display:flex;
+
   flex-wrap:wrap;
 
   gap:12px;
@@ -409,15 +573,26 @@ body.light .icon-btn{
 
 }
 
-/* CLOSE */
+body.light .modal-tech span{
+  color:#7c3aed;
+  background:#7c3aed11;
+  border-color:#7c3aed22;
+}
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
 .close-modal{
 
   position:absolute;
 
   top:20px;
+
   right:20px;
 
   width:50px;
+
   height:50px;
 
   border:none;
@@ -436,7 +611,10 @@ body.light .icon-btn{
 
 }
 
-/* BUTTONS */
+/* =========================================================
+   MODAL BUTTONS
+========================================================= */
+
 .modal-buttons{
 
   display:flex;
@@ -445,7 +623,10 @@ body.light .icon-btn{
 
 }
 
-/* ANIMATION */
+/* =========================================================
+   MODAL ANIMATION
+========================================================= */
+
 @keyframes modalShow{
 
   from{
@@ -468,8 +649,33 @@ body.light .icon-btn{
 
 }
 
-/* MOBILE */
+/* =========================================================
+   MOBILE
+========================================================= */
+
 @media(max-width:900px){
+
+  .project-top{
+
+    flex-direction:column;
+
+    gap:25px;
+
+    text-align:center;
+
+  }
+
+  .project-top h1{
+
+    font-size:45px;
+
+  }
+
+  .projects-grid{
+
+    grid-template-columns:1fr;
+
+  }
 
   .modal-content img{
 
@@ -478,7 +684,9 @@ body.light .icon-btn{
   }
 
   .modal-text h2{
+
     font-size:30px;
+
   }
 
   .modal-buttons{
@@ -488,3 +696,4 @@ body.light .icon-btn{
   }
 
 }
+

@@ -1,0 +1,141 @@
+/* ADMIN PAGE */
+.admin-page{
+
+  min-height:100vh;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  padding:40px;
+
+}
+
+/* CARD */
+.admin-form-card{
+
+  width:100%;
+
+  max-width:700px;
+
+  padding:50px;
+
+  border-radius:30px;
+
+  background:
+  rgba(255,255,255,0.04);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(20px);
+
+}
+
+/* TITLE */
+.admin-form-card h1{
+
+  margin-bottom:35px;
+
+  font-size:42px;
+
+}
+
+/* FORM */
+#project-form{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:20px;
+
+}
+
+/* INPUT */
+#project-form input,
+#project-form textarea{
+
+  width:100%;
+
+  padding:18px 20px;
+
+  border:none;
+
+  outline:none;
+
+  border-radius:16px;
+
+  background:
+  rgba(255,255,255,0.05);
+
+  color:white;
+
+}
+
+/* TEXTAREA */
+#project-form textarea{
+
+  min-height:150px;
+
+  resize:none;
+
+}
+
+/* BUTTON */
+#project-form button{
+
+  padding:18px;
+
+  border:none;
+
+  border-radius:16px;
+
+  cursor:pointer;
+
+  font-size:18px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #7c3aed,
+    #a855f7
+  );
+
+  color:white;
+
+  transition:0.3s;
+
+}
+
+/* HOVER */
+#project-form button:hover{
+
+  transform:
+  translateY(-5px);
+
+}
+
+/* INITIAL */
+.timeline-item{
+
+  opacity:0;
+
+  transform:
+  translateY(80px);
+
+  transition:1s;
+
+}
+
+/* SHOW */
+.timeline-item.show{
+
+  opacity:1;
+
+  transform:
+  translateY(0);
+
+}
