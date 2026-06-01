@@ -1,7 +1,6 @@
-/* TAG CLOUD */
+/* TAG CLOUD - RESPONSIVE SKILL SPHERE */
 
-const texts = [
-
+var texts = [
   "HTML",
   "CSS",
   "JavaScript",
@@ -15,45 +14,63 @@ const texts = [
   "Tailwind",
   "GitHub",
   "API",
-  "UI/UX",
   "Three.js",
+  "UI/UX",
   "Figma"
-
 ];
 
-/* OPTIONS & RADIUS FUNCTION */
+/* RESPONSIVE RADIUS */
 function getSphereRadius() {
-  const width = window.innerWidth;
-  if (width < 480) return 110;
-  if (width < 768) return 150;
-  if (width < 1024) return 200;
-  return 250;
+  var w = window.innerWidth;
+  if (w < 360) return 100;
+  if (w < 480) return 120;
+  if (w < 640) return 150;
+  if (w < 900) return 180;
+  if (w < 1200) return 220;
+  return 260;
 }
 
-const options = {
+var options = {
   radius: getSphereRadius(),
-  maxSpeed: "fast",
-  initSpeed: "fast",
+  maxSpeed: "normal",
+  initSpeed: "normal",
   direction: 135,
   keep: true
 };
 
-/* START */
-let tc = TagCloud(".tagcloud", texts, options);
+/*
+ * CENTER THE SPHERE
+ * TagCloud absolutely positions every <span> relative to the .tagcloud element.
+ * So centering .tagcloud itself (via absolute + translate) centers the whole sphere.
+ * DO NOT touch display/flexbox on .tagcloud — that breaks span positioning.
+ */
+function centerTagCloud() {
+  var el = document.querySelector(".tagcloud");
+  if (!el) return;
+  el.style.position  = "absolute";
+  el.style.left      = "50%";
+  el.style.top       = "50%";
+  el.style.transform = "translate(-50%, -50%)";
+}
+
+/* INIT */
+var tc = TagCloud(".tagcloud", texts, options);
+centerTagCloud();
 
 /* HANDLE RESIZE */
-let resizeTimeout;
-window.addEventListener("resize", () => {
-  clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(() => {
-    const newRadius = getSphereRadius();
+var resizeTimer;
+window.addEventListener("resize", function () {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(function () {
+    var newRadius = getSphereRadius();
     if (options.radius !== newRadius) {
       options.radius = newRadius;
-      // Re-initialize tag cloud on size change
       if (tc && typeof tc.destroy === "function") {
         tc.destroy();
       }
       tc = TagCloud(".tagcloud", texts, options);
+      centerTagCloud();
     }
-  }, 250);
+  }, 300);
 });
+

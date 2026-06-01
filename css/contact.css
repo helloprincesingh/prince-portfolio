@@ -277,6 +277,53 @@ body.light .input-group textarea{
 }
 
 /* MOBILE */
+/* MOBILE ENHANCEMENTS */
+@media(max-width:600px){
+  .contact-top h1{
+    font-size:32px;
+  }
+  .contact-top p{
+    font-size:14px;
+  }
+  .contact-container{
+    gap:20px;
+  }
+  .contact-info, .contact-form{
+    width:100%;
+  }
+  .info-card{
+    padding:20px;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:15px;
+  }
+  .info-card i{
+    width:50px;
+    height:50px;
+    font-size:20px;
+  }
+  .info-card h3{
+    font-size:18px;
+    margin-bottom:5px;
+  }
+  .info-card p{
+    font-size:13px;
+  }
+  .social-links a{
+    width:45px;
+    height:45px;
+    font-size:18px;
+  }
+  .contact-form{
+    padding:25px;
+  }
+  .input-group input,
+  .input-group textarea{
+    padding:14px 18px;
+    font-size:14px;
+  }
+}
+
 @media(max-width:900px){
 
   .contact-top h1{
@@ -290,4 +337,3 @@ body.light .input-group textarea{
   }
 
 }
-
