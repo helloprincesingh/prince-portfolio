@@ -6,6 +6,7 @@
 
 html{
   scroll-behavior:smooth;
+  overflow-x:hidden;
 }
 
 body{
@@ -18,6 +19,7 @@ body{
   color:white;
 
   overflow-x:hidden;
+  max-width:100%;
 }
 
 /* LIGHT MODE */
@@ -988,4 +990,55 @@ linear-gradient(
 
   filter:blur(80px);
 
+}
+
+/* MOBILE QUICK-ACTIONS HORIZONTAL ROW */
+@media (max-width: 900px) {
+  /* Prevent horizontal scrolling on mobile to keep fixed elements perfectly aligned */
+  html, body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Extremely high z-index and perfect horizontal layout at the bottom right for mobile quick-actions */
+  .chatbot {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    z-index: 999999 !important;
+  }
+
+  .music-player {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 85px !important;
+    z-index: 999999 !important;
+  }
+
+  .voice-assistant {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 150px !important;
+    z-index: 999999 !important;
+  }
+
+  /* Scale down button sizes slightly on mobile for a neat, premium UI */
+  .chat-toggle,
+  #music-toggle,
+  #voice-btn {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 18px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Position the chatbot box neatly on mobile */
+  .chat-box {
+    bottom: 65px !important;
+    right: 0 !important;
+    width: 290px !important;
+    max-height: 400px !important;
+  }
 }
