@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Upload Certificate</title>
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ICONS -->
+  <link rel="stylesheet" href="../css/fontawesome/all.min.css">
+
+  <!-- CSS -->
+  <link
+    rel="stylesheet"
+    href="admin.css"
+  >
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif !important;
+    }
+  </style>
+
+  <!-- AUTH GUARD -->
+  <script type="module" src="js/adminAuth.js"></script>
+</head>
+
+<body>
+
+  <!-- BOX -->
+  <div class="admin-box">
+
+    <a href="dashboard.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Dashboard</a>
+
+    <!-- TITLE -->
+    <h1>
+
+      Upload Certificate
+
+    </h1>
+
+    <!-- FORM -->
+    <form id="certificate-form">
+
+      <!-- TITLE -->
+      <input
+        type="text"
+        id="title"
+        placeholder="Certificate Title"
+        required
+      >
+
+      <!-- ISSUER -->
+      <input
+        type="text"
+        id="issuer"
+        placeholder="Issuer"
+        required
+      >
+
+      <!-- IMAGE -->
+      <label>
+
+        Certificate Image
+
+      </label>
+
+      <input
+        type="file"
+        id="image"
+        required
+      >
+
+      <!-- PDF -->
+      <label>
+
+        Certificate PDF
+
+      </label>
+
+      <input
+        type="file"
+        id="pdf"
+        required
+      >
+
+      <!-- BUTTON -->
+<!-- BUTTON -->
+        <button type="submit" id="btn-publish">
+          Upload & Publish Certificate
+        </button>
+        <button type="button" id="btn-draft" class="btn-secondary">
+          Save as Draft
+        </button>
+
+    </form>
+
+  </div>
+
+  <!-- JS -->
+  <script
+    type="module"
+    src="js/addCertificate.js"
+  ></script>
+
+</body>
+</html>
+

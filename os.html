@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Terminal OS</title>
+
+  <!-- FONT -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- ICONS -->
+  <link
+    rel="stylesheet"
+    href="css/fontawesome/all.min.css"
+  >
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/os.css">
+
+</head>
+
+<body>
+
+  <!-- DESKTOP -->
+  <div class="desktop">
+
+    <!-- TASKBAR -->
+    <div class="taskbar">
+
+      <div class="logo">
+
+        <i class="fa-solid fa-terminal"></i>
+
+        PrinceOS
+
+      </div>
+
+      <div class="task-icons">
+
+        <i class="fa-solid fa-folder"></i>
+
+        <i class="fa-solid fa-code"></i>
+
+        <i class="fa-solid fa-user"></i>
+
+      </div>
+
+    </div>
+
+    <!-- WINDOW -->
+    <div class="window" id="window">
+
+      <!-- TOP -->
+      <div class="window-top" id="drag-area">
+
+        <div class="dots">
+
+          <span class="red"></span>
+          <span class="yellow"></span>
+          <span class="green"></span>
+
+        </div>
+
+        <h3>
+          terminal.exe
+        </h3>
+
+      </div>
+
+      <!-- BODY -->
+      <div class="window-body">
+
+        <p>
+
+          <span class="green-text">
+            prince@os
+          </span>
+
+          :
+          <span class="blue-text">
+            ~
+          </span>
+
+          $
+          whoami
+
+        </p>
+
+        <p class="output">
+
+          AI Developer &
+          Futuristic UI Designer
+
+        </p>
+
+        <p>
+
+          <span class="green-text">
+            prince@os
+          </span>
+
+          :
+          <span class="blue-text">
+            ~
+          </span>
+
+          $
+          skills
+
+        </p>
+
+        <p class="output">
+
+          HTML • CSS • JS • React • AI
+
+        </p>
+
+        <p>
+
+          <span class="green-text">
+            prince@os
+          </span>
+
+          :
+          <span class="blue-text">
+            ~
+          </span>
+
+          $
+          projects
+
+        </p>
+
+        <p class="output">
+
+          EduCrush • AI Resume Builder
+
+        </p>
+
+        <!-- INPUT -->
+        <div class="terminal-input">
+
+          <span class="green-text">
+            prince@os
+          </span>
+
+          :
+          <span class="blue-text">
+            ~
+          </span>
+
+          $
+
+          <input
+            type="text"
+            id="terminal-command"
+            placeholder="Type command..."
+          >
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- JS -->
+  <script src="js/os.js"></script>
+
+  <!-- NAV AUTH -->
+  <script type="module" src="js/navAuth.js"></script>
+</body>
+</html>
+
+

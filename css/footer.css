@@ -1,84 +1,54 @@
-/* FOOTER */
-.footer {
-  padding-top: 80px;
-  padding-bottom: 40px;
-  background: transparent;
-  position: relative;
-  z-index: 10;
+/* footer.css — kept minimal; all footer styles now live in global.css */
+
+/* Only light-mode overrides needed here */
+body.light .footer{
+  background: rgba(255,255,255,0.75);
+  border-top: 1px solid #e2e8f0;
+  color: #0f172a;
 }
 
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 50px;
-  padding-bottom: 40px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+body.light .footer-cta h2{
+  background: linear-gradient(90deg,#0f172a,#7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-body.light .footer-container {
+body.light .footer-cta p,
+body.light .footer-column p,
+body.light .location,
+body.light .email,
+body.light .availability{
+  color: #475569;
+}
+
+body.light .footer-column a{
+  color: #334155;
+}
+
+body.light .footer-column a:hover{
+  color: #7c3aed;
+}
+
+body.light .tech-stack span{
+  background: rgba(124,58,237,0.08);
+  border-color: rgba(124,58,237,0.2);
+  color: #7c3aed;
+}
+
+body.light .footer-container{
   border-bottom: 1px solid #e2e8f0;
 }
 
-.footer h2 {
-  color: #8b5cf6;
-  margin-bottom: 15px;
-  font-size: 28px;
-  font-weight: 700;
-}
-
-.footer p {
-  max-width: 400px;
-  line-height: 1.8;
-  color: #cbd5e1;
-  font-size: 15px;
-}
-
-body.light .footer p {
-  color: #475569;
-}
-
-.footer-links {
-  display: flex;
-  gap: 30px;
-}
-
-.footer-links a {
-  text-decoration: none;
-  color: #cbd5e1;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-body.light .footer-links a {
-  color: #475569;
-}
-
-.footer-links a:hover {
-  color: #8b5cf6;
-}
-
-/* BOTTOM */
-.footer-bottom {
-  text-align: center;
-  padding: 25px 0 0 0;
-  color: #94a3b8;
-  font-size: 14px;
-}
-
-body.light .footer-bottom {
+body.light .footer-bottom{
+  border-top: 1px solid #e2e8f0;
   color: #64748b;
 }
 
-/* MOBILE */
-@media (max-width: 900px) {
-  .footer-container {
-    flex-direction: column;
-    gap: 30px;
-  }
+body.light .btn-secondary{
+  border-color: #cbd5e1;
+  color: #334155;
+}
 
-  .footer-links {
-    flex-wrap: wrap;
-    gap: 20px;
-  }
+body.light .btn-secondary:hover{
+  background: rgba(124,58,237,0.08);
 }

@@ -50,23 +50,12 @@ fetch(
 
 .then((data)=>{
 
-  avatar.src =
-  data.avatar_url;
-
-  nameEl.textContent =
-  data.name;
-
-  bioEl.textContent =
-  data.bio;
-
-  repoCount.textContent =
-  data.public_repos;
-
-  followers.textContent =
-  data.followers;
-
-  following.textContent =
-  data.following;
+  avatar.src = data.avatar_url;
+  nameEl.textContent = data.name;
+  bioEl.textContent = data.bio;
+  repoCount.textContent = data.public_repos;
+  followers.textContent = data.followers;
+  following.textContent = data.following;
 
 });
 
@@ -83,6 +72,8 @@ fetch(
   .slice(0,6)
 
   .forEach((repo)=>{
+
+
 
     const card =
     document.createElement("div");

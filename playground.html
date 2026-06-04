@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Live Coding Playground</title>
+
+  <!-- FONT -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- ICONS -->
+  <link
+    rel="stylesheet"
+    href="css/fontawesome/all.min.css"
+  >
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/playground.css">
+<!-- CSS -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/home.css">
+
+  
+</head>
+
+<body>
+
+  <!-- TOP -->
+  <header class="playground-header">
+
+    <h1>
+      Live Coding Playground
+    </h1>
+
+    <button id="run-btn">
+
+      <i class="fa-solid fa-play"></i>
+
+      Run Code
+
+    </button>
+
+  </header>
+
+  <!-- EDITORS -->
+  <section class="editor-section">
+
+    <!-- HTML -->
+    <div class="editor-box">
+
+      <h2>
+        HTML
+      </h2>
+
+      <textarea id="html-code">
+
+<h1>Hello Prince 🚀</h1>
+
+      </textarea>
+
+    </div>
+
+    <!-- CSS -->
+    <div class="editor-box">
+
+      <h2>
+        CSS
+      </h2>
+
+      <textarea id="css-code">
+
+body{
+  background:black;
+  color:white;
+  text-align:center;
+  margin-top:100px;
+}
+
+h1{
+  color:#8b5cf6;
+}
+
+      </textarea>
+
+    </div>
+
+    <!-- JS -->
+    <div class="editor-box">
+
+      <h2>
+        JavaScript
+      </h2>
+
+      <textarea id="js-code">
+
+console.log("Welcome");
+
+      </textarea>
+
+    </div>
+
+  </section>
+
+  <!-- OUTPUT -->
+  <section class="output-section">
+
+    <iframe id="output"></iframe>
+
+  </section>
+
+  <!-- JS -->
+  <script src="js/playground.js"></script>
+<!-- FLOATING DOCK -->
+
+<div class="floating-dock">
+
+  <!-- HOME -->
+  <a href="index.html" class="dock-item">
+
+    <i class="fa-solid fa-house"></i>
+
+    <span>Home</span>
+
+  </a>
+
+  <!-- ABOUT -->
+  <a href="about.html" class="dock-item">
+
+    <i class="fa-solid fa-user"></i>
+
+    <span>About</span>
+
+  </a>
+
+  <!-- PROJECTS -->
+  <a href="projects.html" class="dock-item">
+
+    <i class="fa-solid fa-code"></i>
+
+    <span>Projects</span>
+
+  </a>
+
+  <!-- BLOG -->
+  <a href="blog.html" class="dock-item">
+
+    <i class="fa-solid fa-pen"></i>
+
+    <span>Blog</span>
+
+  </a>
+
+  <!-- CONTACT -->
+  <a href="contact.html" class="dock-item">
+
+    <i class="fa-solid fa-envelope"></i>
+
+    <span>Contact</span>
+
+  </a>
+
+  <!-- PLAYGROUND -->
+  <a href="playground.html" class="dock-item">
+
+    <i class="fa-solid fa-laptop-code"></i>
+
+    <span>Playground</span>
+
+  </a>
+
+</div>
+  <!-- NAV AUTH -->
+  <script type="module" src="js/navAuth.js"></script>
+</body>
+</html>
+
+

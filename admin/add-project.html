@@ -12,6 +12,13 @@
 
   <title>Add Project</title>
 
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ICONS -->
+  <link rel="stylesheet" href="../css/fontawesome/all.min.css">
+
   <!-- CSS -->
   <link
     rel="stylesheet"
@@ -23,6 +30,14 @@
     href="../css/admin.css"
   >
 
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif !important;
+    }
+  </style>
+
+  <!-- AUTH GUARD -->
+  <script type="module" src="js/adminAuth.js"></script>
 </head>
 
 <body>
@@ -31,6 +46,8 @@
   <section class="admin-page">
 
     <div class="admin-form-card">
+
+      <a href="dashboard.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Dashboard</a>
 
       <h1>
         Add Project
@@ -84,12 +101,11 @@
           required
         >
 
-        <!-- BUTTON -->
-        <button type="submit">
-
-          Upload Project
-
-        </button>
+        <!-- BUTTONS -->
+        <div class="btn-row">
+          <button type="submit" id="btn-publish">Upload & Publish</button>
+          <button type="button" id="btn-draft" class="btn-secondary">Save as Draft</button>
+        </div>
 
       </form>
 
@@ -106,3 +122,4 @@
 
 </body>
 </html>
+

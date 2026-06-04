@@ -23,7 +23,7 @@
   <!-- ICONS -->
   <link
     rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    href="css/fontawesome/all.min.css"
   >
 
   <!-- CSS -->
@@ -89,6 +89,7 @@
         <a href="projects.html">Projects</a>
         <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
+              <a href="admin/dashboard.html" class="admin-nav-link" style="display: none; color: #a855f7; font-weight: 600;"><i class="fa-solid fa-shield-halved"></i> Admin</a>
       </nav>
       <!-- RIGHT -->
       <div class="nav-right">
@@ -505,104 +506,13 @@
 
     </div>
 
-    <!-- GRID -->
-    <div class="certificate-grid">
-
-      <!-- CARD -->
-      <div class="certificate-card">
-
-        <!-- IMAGE -->
-        <div class="certificate-image">
-
-          <img
-            src="https://images.unsplash.com/photo-1521791136064-7986c2920216"
-            alt="certificate"
-          >
-
-        </div>
-
-        <!-- CONTENT -->
-        <div class="certificate-content">
-
-          <h2>
-            Web Development
-          </h2>
-
-          <p>
-            Completed advanced frontend
-            development certification.
-          </p>
-
-          <a href="#" class="btn">
-            View Certificate
-          </a>
-
-        </div>
-
+    <!-- GRID (populated dynamically by certificates.js) -->
+    <div class="certificate-grid" id="certificate-grid">
+      <!-- Loading state -->
+      <div id="cert-loading" style="grid-column:1/-1;text-align:center;padding:60px;color:#94a3b8;">
+        <i class="fa-solid fa-spinner fa-spin" style="font-size:2rem;"></i>
+        <p style="margin-top:14px;">Loading certificates…</p>
       </div>
-
-      <!-- CARD -->
-      <div class="certificate-card">
-
-        <div class="certificate-image">
-
-          <img
-            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
-            alt="certificate"
-          >
-
-        </div>
-
-        <div class="certificate-content">
-
-          <h2>
-            AI & Machine Learning
-          </h2>
-
-          <p>
-            Learned machine learning,
-            AI concepts, and applications.
-          </p>
-
-          <a href="#" class="btn">
-            View Certificate
-          </a>
-
-        </div>
-
-      </div>
-
-      <!-- CARD -->
-      <div class="certificate-card">
-
-        <div class="certificate-image">
-
-          <img
-            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"
-            alt="certificate"
-          >
-
-        </div>
-
-        <div class="certificate-content">
-
-          <h2>
-            JavaScript Mastery
-          </h2>
-
-          <p>
-            Completed modern JavaScript
-            and ES6+ certification program.
-          </p>
-
-          <a href="#" class="btn">
-            View Certificate
-          </a>
-
-        </div>
-
-      </div>
-
     </div>
 
   </div>
@@ -670,7 +580,7 @@
 
 </section>
   <!-- FOOTER -->
-  <footer class="footer">
+  <!-- <footer class="footer">
     <div class="container footer-container">
       <div>
         <h2>Prince.</h2>
@@ -690,7 +600,114 @@
     <div class="footer-bottom">
       © 2026 Prince Kumar | All Rights Reserved
     </div>
-  </footer>
+  </footer> -->
+  <footer class="footer">
+
+    <!-- CTA Section -->
+    <div class="footer-cta">
+        <h2>Let's Build Something Amazing Together</h2>
+        <p>
+            Passionate about AI, Machine Learning, Full Stack Development,
+            and creating digital experiences that solve real-world problems.
+        </p>
+
+        <div class="cta-buttons">
+            <a href="contact.html" class="btn-primary">Start a Project</a>
+            <a href="resume.pdf" class="btn-secondary" download>
+                Download Resume
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Footer -->
+    <div class="footer-container">
+
+        <!-- Brand -->
+        <div class="footer-column brand">
+            <h3>Prince Kumar</h3>
+
+            <p>
+                AI/ML Engineer & Full Stack Developer building
+                intelligent digital products, web applications,
+                and innovative solutions.
+            </p>
+
+            <div class="location">
+                📍 Dehradun, India
+            </div>
+
+            <div class="email">
+                📧 princesingh23032006@gmail.com
+            </div>
+
+            <div class="availability">
+                🟢 Available for Freelance & Internship Opportunities
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="footer-column">
+            <h4>Navigation</h4>
+
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <!-- Expertise -->
+        <div class="footer-column">
+            <h4>Expertise</h4>
+
+            <a href="#">Artificial Intelligence</a>
+            <a href="#">Machine Learning</a>
+            <a href="#">Full Stack Development</a>
+            <a href="#">UI/UX Design</a>
+            <a href="#">Cloud Solutions</a>
+        </div>
+
+        <!-- Connect -->
+        <div class="footer-column">
+            <h4>Connect</h4>
+
+            <a href="https://github.com/princekumar2303" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/prince-kumar-2303/" target="_blank">LinkedIn</a>
+            <a href="https://twitter.com/princekumar2303" target="_blank">Twitter/X</a>
+            <a href="https://instagram.com/princekumar2303" target="_blank">Instagram</a>
+            <a href="mailto:princesingh23032006@gmail.com">Email</a>
+        </div>
+
+    </div>
+
+    <!-- Tech Stack -->
+    <div class="tech-stack">
+
+        <span>Python</span>
+        <span>JavaScript</span>
+        <span>React</span>
+        <span>Node.js</span>
+        <span>Supabase</span>
+        <span>MongoDB</span>
+        <span>TensorFlow</span>
+        <span>Git</span>
+
+    </div>
+
+    <!-- Bottom -->
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Prince Kumar. All Rights Reserved.
+        </p>
+
+        <p>
+            Building Intelligent Systems for a Smarter Tomorrow 🚀
+        </p>
+
+    </div>
+
+</footer>
 
   <!-- AI CHATBOT -->
 
@@ -789,6 +806,7 @@
 </div>
 
   <!-- JS -->
+  <script type="module" src="js/certificates.js"></script>
   <script src="js/navbar.js"></script>
   <script src="js/cursor.js"></script>
   <script src="js/particles.min.js"></script>
@@ -806,5 +824,71 @@
   <script src="js/sphere.js"></script>
   <script src="js/timeline.js"></script>
   <script src="js/typing.js"></script>
+  <script src="js/glitch.js"></script>
+
+  <!-- FLOATING DOCK -->
+
+<div class="floating-dock">
+
+  <!-- HOME -->
+  <a href="index.html" class="dock-item">
+
+    <i class="fa-solid fa-house"></i>
+
+    <span>Home</span>
+
+  </a>
+
+  <!-- ABOUT -->
+  <a href="about.html" class="dock-item">
+
+    <i class="fa-solid fa-user"></i>
+
+    <span>About</span>
+
+  </a>
+
+  <!-- PROJECTS -->
+  <a href="projects.html" class="dock-item">
+
+    <i class="fa-solid fa-code"></i>
+
+    <span>Projects</span>
+
+  </a>
+
+  <!-- BLOG -->
+  <a href="blog.html" class="dock-item">
+
+    <i class="fa-solid fa-pen"></i>
+
+    <span>Blog</span>
+
+  </a>
+
+  <!-- CONTACT -->
+  <a href="contact.html" class="dock-item">
+
+    <i class="fa-solid fa-envelope"></i>
+
+    <span>Contact</span>
+
+  </a>
+
+  <!-- PLAYGROUND -->
+  <a href="playground.html" class="dock-item">
+
+    <i class="fa-solid fa-laptop-code"></i>
+
+    <span>Playground</span>
+
+  </a>
+
+</div>
+  <!-- NAV AUTH -->
+  <script type="module" src="js/navAuth.js"></script>
 </body>
 </html>
+
+
+

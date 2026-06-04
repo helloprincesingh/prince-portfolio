@@ -84,10 +84,10 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ==========================================================================
      3. Active Link Auto-Highlighting
      ========================================================================== */
-  const navLinks = document.querySelectorAll(".navbar a");
+  const pageLinks = document.querySelectorAll(".navbar a");
   const currentHref = window.location.pathname.split("/").pop() || "index.html";
 
-  navLinks.forEach(link => {
+  pageLinks.forEach(link => {
     const linkHref = link.getAttribute("href");
     if (linkHref === currentHref) {
       link.classList.add("active");
