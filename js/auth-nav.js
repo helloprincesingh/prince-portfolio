@@ -19,8 +19,8 @@ onAuthStateChanged(auth, (user) => {
   const existingAdmin = document.getElementById("nav-admin");
   if (existingAdmin) existingAdmin.remove();
 
-  // Check if we are inside a subdirectory (like /admin/)
-  const isNested = window.location.pathname.includes("/admin/");
+  // Check if we are inside a subdirectory (like /admin/ or /auth/)
+  const isNested = window.location.pathname.includes("/admin/") || window.location.pathname.includes("/auth/");
   const prefix = isNested ? "../" : "";
 
   // 1. Show or hide all hardcoded Admin links (.admin-nav-link)
@@ -65,14 +65,14 @@ onAuthStateChanged(auth, (user) => {
   } else {
     // Inject Login Link
     const loginLink = document.createElement("a");
-    loginLink.href = prefix + "login.html";
+    loginLink.href = prefix + "auth/login.html";
     loginLink.id = "nav-login";
     loginLink.textContent = "Login";
     navbar.appendChild(loginLink);
 
     // Inject Signup Link
     const signupLink = document.createElement("a");
-    signupLink.href = prefix + "signup.html";
+    signupLink.href = prefix + "auth/signup.html";
     signupLink.id = "nav-signup";
     signupLink.textContent = "Signup";
     navbar.appendChild(signupLink);

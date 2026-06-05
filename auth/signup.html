@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account - Prince Portfolio</title>
+
+  <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+
+  <div class="auth-container">
+
+    <h1>Create Account</h1>
+
+    <form id="signup-form">
+
+      <div class="input-group">
+        <input
+          type="email"
+          id="signup-email"
+          placeholder="Email Address"
+          required>
+      </div>
+
+      <div class="input-group">
+        <input
+          type="password"
+          id="signup-password"
+          placeholder="Password"
+          minlength="6"
+          required>
+        <button type="button" id="signup-password-toggle" class="password-toggle">👁</button>
+      </div>
+
+      <div class="input-group">
+        <input
+          type="password"
+          id="confirm-password"
+          placeholder="Confirm Password"
+          minlength="6"
+          required>
+        <button type="button" id="signup-confirm-password-toggle" class="password-toggle">👁</button>
+      </div>
+
+      <button
+        type="submit"
+        class="auth-btn">
+        Create Account
+      </button>
+
+    </form>
+
+    <button
+      id="google-login"
+      class="google-btn">
+      Continue with Google
+    </button>
+
+    <div class="auth-links">
+
+      <p>
+        Already have an account?
+      </p>
+
+      <a href="login.html">
+       <p></p> Login Here
+      </a>
+
+    </div>
+
+  </div>
+
+  <script type="module" src="signup.js"></script>
+
+</body>
+
+</html>

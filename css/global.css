@@ -1327,8 +1327,8 @@ body.light .dock-item{
 
 .footer{
     position:relative;
-    margin-top:120px;
-    padding:80px 10%;
+    margin-top:100px;
+    padding:60px 10%;
     color:white;
 
     background:rgba(14,17,40,0.45);
@@ -1364,12 +1364,12 @@ body.light .dock-item{
 
 .footer-cta{
     text-align:center;
-    margin-bottom:80px;
+    margin-bottom:50px;
 }
 
 .footer-cta h2{
-    font-size:3rem;
-    margin-bottom:20px;
+    font-size:2.8rem;
+    margin-bottom:18px;
 
     background:linear-gradient(
         90deg,
@@ -1436,12 +1436,32 @@ body.light .dock-item{
 
     display:grid;
 
-    grid-template-columns:
-    2fr 1fr 1fr 1fr;
+    grid-template-columns:2fr 1fr;
 
-    gap:50px;
+    gap:32px;
 
-    margin-bottom:60px;
+    margin-bottom:40px;
+}
+
+.footer-links{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+}
+
+.footer-connect{
+    margin-bottom:40px;
+}
+
+.footer-connect h4{
+    margin-bottom:16px;
+}
+
+.footer-connect-icons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    align-items:flex-start;
 }
 
 .footer-column h4,
@@ -1483,6 +1503,53 @@ body.light .dock-item{
     transform:translateX(5px);
 }
 
+.footer-connect-icons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    align-items:flex-start;
+}
+
+.footer-connect-icons a{
+    display:inline-flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    min-width:100px;
+    max-width:130px;
+    padding:14px 12px;
+    border-radius:18px;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.10);
+    color:#cbd5e1;
+    margin-bottom:0;
+    text-align:center;
+    transition:.3s;
+}
+
+.footer-connect-icons a i{
+    font-size:1.3rem;
+    margin-bottom:8px;
+}
+
+.footer-connect-icons a span{
+    font-size:.88rem;
+    line-height:1.4;
+}
+
+.footer-connect-icons a:hover{
+    color:#ffffff;
+    background:rgba(168,85,247,0.18);
+    border-color:rgba(168,85,247,0.35);
+    transform:translateY(-2px);
+}
+
+.footer-column.footer-connect .footer-connect-icons a:hover i,
+.footer-column.footer-connect .footer-connect-icons a:hover span{
+    color:#ffffff;
+}
+
 /* ==========================
    TECH STACK
 ========================== */
@@ -1492,9 +1559,9 @@ body.light .dock-item{
     justify-content:center;
     flex-wrap:wrap;
 
-    gap:15px;
+    gap:12px;
 
-    margin-bottom:50px;
+    margin-bottom:30px;
 }
 
 .tech-stack span{
@@ -1525,14 +1592,14 @@ body.light .dock-item{
 
     border-top:1px solid rgba(255,255,255,.08);
 
-    padding-top:25px;
+    padding-top:18px;
 
     display:flex;
     justify-content:space-between;
     align-items:center;
 
     flex-wrap:wrap;
-    gap:15px;
+    gap:12px;
 
     color:#94a3b8;
 }
@@ -1543,28 +1610,86 @@ body.light .dock-item{
 
 @media(max-width:900px){
     .footer{
-        padding: 60px 5%;
+        padding: 45px 5%;
+    }
+
+    .footer-cta{
+        text-align:center;
+    }
+
+    .footer-cta p{
+        max-width:440px;
+        margin: 0 auto 18px;
+    }
+
+    .cta-buttons{
+        flex-direction:column;
+        align-items:center;
+        gap:12px;
+    }
+
+    .cta-buttons a{
+        width:100%;
+        max-width:320px;
     }
 
     .footer-container{
         grid-template-columns:1fr;
-        text-align:center;
-        gap: 40px;
+        gap: 28px;
+    }
+
+    .footer-links{
+        grid-template-columns:1fr;
     }
 
     .footer-column {
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        padding: 20px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-column:last-child {
+        border-bottom: none;
+    }
+
+    .footer-column.brand {
         align-items: center;
+        text-align: center;
+        border-bottom: none;
+    }
+
+    .footer-column.brand p,
+    .footer-column.brand .location,
+    .footer-column.brand .email,
+    .footer-column.brand .availability {
+        max-width: 420px;
+    }
+
+    .footer-column h4,
+    .brand h3 {
+        width: 100%;
+    }
+
+    .footer-column a{
+        width: 100%;
     }
 
     .footer-bottom{
         text-align:center;
         flex-direction:column;
         gap: 15px;
+        align-items:center;
     }
 
     .footer-cta h2{
         font-size:2rem;
+    }
+
+    .tech-stack{
+        justify-content:center;
+        gap:12px;
     }
 }

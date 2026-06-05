@@ -1,7 +1,7 @@
-console.log("Dashboard Loaded Successfully");
-
 import { supabase } from "./supabase.js";
 
+console.log("Dashboard Loaded Successfully");
+console.log("Supabase:", supabase);
 // STATE
 let currentTab = "projects";
 let itemsList = [];
@@ -57,6 +57,7 @@ tabButtons.forEach((btn) => {
     btn.classList.add("active");
     currentTab = btn.dataset.tab;
     loadHistory();
+    
   });
 });
 
@@ -65,11 +66,14 @@ async function loadHistory() {
   historyList.innerHTML = '<p class="empty-state"><i class="fa-solid fa-spinner fa-spin"></i> Loading history...</p>';
 
   try {
+    console.log("Current Tab:", currentTab);
     const { data, error } = await supabase
+   
       .from(currentTab)
       .select("*")
       .order("id", { ascending: false });
-
+     console.log("Data:", data);
+    console.log("Error:", error);
     if (error) {
       console.error(error);
       historyList.innerHTML = `<p class="empty-state" style="color: #ef4444;">Error: ${error.message}</p>`;

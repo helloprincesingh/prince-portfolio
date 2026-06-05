@@ -160,6 +160,73 @@ const starMaterial = new THREE.PointsMaterial({
 const stars = new THREE.Points(starGeometry, starMaterial);
 scene.add(stars);
 
+/* HOVER RING AURA */
+const ringGeo = new THREE.TorusGeometry(6.6, 0.06, 16, 120);
+const ringMat = new THREE.MeshBasicMaterial({
+  color: 0x8b5cf6,
+  transparent: true,
+  opacity: 0.18,
+  blending: THREE.AdditiveBlending,
+  toneMapped: false
+});
+const ringGlow = new THREE.Mesh(ringGeo, ringMat);
+ringGlow.rotation.x = Math.PI / 2;
+ringGlow.position.y = 0;
+scene.add(ringGlow);
+
+function isLightTheme() {
+  return document.body.classList.contains("light");
+}
+
+function updateGlobeTheme() {
+  const light = isLightTheme();
+
+  ambientLight.color.setHex(light ? 0x111827 : 0xffffff);
+  ambientLight.intensity = light ? 0.75 : 0.4;
+
+  dirLight1.color.setHex(light ? 0x93c5fd : 0xa855f7);
+  dirLight1.intensity = light ? 1.2 : 2;
+
+  dirLight2.color.setHex(light ? 0x38bdf8 : 0x06b6d4);
+  dirLight2.intensity = light ? 1 : 1.5;
+
+  innerMat.color.setHex(light ? 0xe2e8f0 : 0x070a13);
+  innerMat.roughness = light ? 0.4 : 0.1;
+  innerMat.opacity = light ? 0.9 : 0.75;
+  innerMat.transmission = light ? 0.2 : 0.5;
+  innerMat.needsUpdate = true;
+
+  outerMat.color.setHex(light ? 0x6366f1 : 0x8b5cf6);
+  outerMat.emissive.setHex(light ? 0x93c5fd : 0x7c3aed);
+  outerMat.opacity = light ? 0.3 : 0.25;
+  outerMat.needsUpdate = true;
+
+  pointsMat.color.setHex(light ? 0x2563eb : 0xa855f7);
+  pointsMat.opacity = light ? 0.8 : 0.95;
+  pointsMat.needsUpdate = true;
+
+  ringMat.color.setHex(light ? 0x2563eb : 0x8b5cf6);
+  ringMat.opacity = light ? 0.12 : 0.18;
+  ringMat.needsUpdate = true;
+
+  starMaterial.color.setHex(light ? 0x1e293b : 0xffffff);
+  starMaterial.opacity = light ? 0.35 : 0.5;
+  starMaterial.needsUpdate = true;
+}
+
+updateGlobeTheme();
+
+const themeObserver = new MutationObserver((mutations) => {
+  for (const mutation of mutations) {
+    if (mutation.attributeName === "class") {
+      updateGlobeTheme();
+      break;
+    }
+  }
+});
+
+themeObserver.observe(document.body, { attributes: true, attributeFilter: ["class"] });
+
 /* DRAG TO ROTATE (BULLETPROOF PHYSICS DAMPING) */
 let targetRotationX = 0.5;
 let targetRotationY = 0.5;
@@ -240,6 +307,7 @@ function animate() {
   outerGlobe.rotation.y += 0.0002;
   nodePoints.rotation.y -= 0.0001;
   arcsGroup.rotation.y += 0.0004;
+  ringGlow.rotation.z += 0.00035;
   
   renderer.render(scene, camera);
 }

@@ -9,7 +9,7 @@ onAuthStateChanged(auth, (user) => {
   if (!user) {
     // Not logged in
     alert("Unauthorized access. Please log in first.");
-    window.location.href = "../login.html";
+    window.location.href = "../auth/login.html";
   } else if (!user.email || user.email.toLowerCase() !== ADMIN_EMAIL.toLowerCase()) {
     // Logged in, but not the admin
     alert("Access Denied. You do not have admin privileges.");

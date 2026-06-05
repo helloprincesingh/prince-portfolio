@@ -1,0 +1,5 @@
+@import url("./login.css");
+
+.auth-container {
+  max-width: 500px;
+}
