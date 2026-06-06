@@ -39,7 +39,7 @@ renderer.setPixelRatio(window.devicePixelRatio);
 // Set background color and fog for depth
 renderer.setClearColor(0x0d0d1a);
 threeScene.fog = new THREE.FogExp2(0x0d0d1a, 0.001);
-const bgTexture = new THREE.TextureLoader().load('./images/galaxy_texture.png');
+const bgTexture = new THREE.TextureLoader().load('./assets/images/galaxy_texture.png');
 threeScene.background = bgTexture;
 
 /* APPEND */
