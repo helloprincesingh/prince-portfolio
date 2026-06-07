@@ -1,179 +1,214 @@
-/* CHATBOT */
+/* CHATBOT - PROFESSIONAL AND INTERACTIVE UPGRADE */
 
-const chatToggle =
-document.querySelector(".chat-toggle");
+document.addEventListener("DOMContentLoaded", () => {
+  const chatToggle = document.querySelector(".chat-toggle");
+  const chatBox = document.querySelector(".chat-box");
+  const closeChat = document.querySelector(".close-chat");
+  const chatInput = document.querySelector(".chat-input input");
+  const sendBtn = document.querySelector(".chat-input button");
+  const chatBody = document.querySelector(".chat-body");
 
-const chatBox =
-document.querySelector(".chat-box");
+  if (!chatBox) return;
 
-const closeChat =
-document.querySelector(".close-chat");
+  // 1. RESTRUCTURE DOM FOR FULL-SCREEN DESIGN & SUGGESTIONS
+  const mainWrapper = document.createElement("div");
+  mainWrapper.classList.add("chat-main-wrapper");
 
-const chatInput =
-document.querySelector(".chat-input input");
+  const oldInput = document.querySelector(".chat-input");
 
-const sendBtn =
-document.querySelector(".chat-input button");
+  // Move body and input inside the centered main wrapper
+  chatBox.insertBefore(mainWrapper, oldInput);
+  mainWrapper.appendChild(chatBody);
 
-const chatBody =
-document.querySelector(".chat-body");
+  // Create suggestion chips
+  const suggestionsDiv = document.createElement("div");
+  suggestionsDiv.classList.add("chat-suggestions");
 
-if (chatToggle) {
+  const suggestionChips = [
+    { text: "👤 About Prince", query: "Who is Prince Kumar?" },
+    { text: "💻 Technical Skills", query: "What are your technical skills?" },
+    { text: "🚀 Top Projects", query: "Tell me about your projects." },
+    { text: "🎓 Education", query: "Where did you study?" },
+    { text: "🤝 Freelance / Hire", query: "Are you available for freelance work?" },
+    { text: "📞 Contact Info", query: "How can I contact you?" }
+  ];
 
-/* OPEN */
-chatToggle.addEventListener(
-  "click",
-  ()=>{
-
-    chatBox.classList.toggle(
-      "active"
-    );
-
-  }
-);
-
-/* CLOSE */
-closeChat.addEventListener(
-  "click",
-  ()=>{
-
-    chatBox.classList.remove(
-      "active"
-    );
-
-  }
-);
-
-/* SEND */
-sendBtn.addEventListener(
-  "click",
-  sendMessage
-);
-
-chatInput.addEventListener(
-  "keypress",
-  (e)=>{
-
-    if(e.key === "Enter"){
-
+  suggestionChips.forEach(chipData => {
+    const chip = document.createElement("button");
+    chip.type = "button";
+    chip.classList.add("suggestion-chip");
+    chip.textContent = chipData.text;
+    chip.addEventListener("click", () => {
+      chatInput.value = chipData.query;
       sendMessage();
+    });
+    suggestionsDiv.appendChild(chip);
+  });
 
-    }
+  mainWrapper.appendChild(suggestionsDiv);
+  mainWrapper.appendChild(oldInput);
 
+  // 2. TOGGLE LOGIC
+  if (chatToggle) {
+    chatToggle.addEventListener("click", () => {
+      chatBox.classList.add("active");
+      document.body.classList.add("chat-active");
+      chatInput.focus();
+    });
   }
-);
 
-}
+  if (closeChat) {
+    closeChat.addEventListener("click", () => {
+      chatBox.classList.remove("active");
+      document.body.classList.remove("chat-active");
+    });
+  }
 
-/* FUNCTION */
-async function sendMessage(){
+  if (sendBtn) {
+    sendBtn.addEventListener("click", sendMessage);
+  }
 
-  const message =
-  chatInput.value.trim();
-
-  if(message === "") return;
-
-  /* USER */
-  const userDiv =
-  document.createElement("div");
-
-  userDiv.classList.add(
-    "user-message"
-  );
-
-  userDiv.textContent =
-  message;
-
-  chatBody.appendChild(
-    userDiv
-  );
-
-  /* CLEAR */
-  chatInput.value = "";
-
-  /* AI TYPING */
-  const botDiv =
-  document.createElement("div");
-
-  botDiv.classList.add(
-    "bot-message"
-  );
-
-  botDiv.textContent =
-  "Thinking...";
-
-  chatBody.appendChild(
-    botDiv
-  );
-
-  /* SCROLL */
-  chatBody.scrollTop =
-  chatBody.scrollHeight;
-
-  try{
-
-    const response =
-    await fetch(
-
-      "http://localhost:3000/chat",
-
-      {
-
-        method:"POST",
-
-        headers:{
-          "Content-Type":
-          "application/json"
-        },
-
-        body:JSON.stringify({
-          message
-        })
-
+  if (chatInput) {
+    chatInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        sendMessage();
       }
-
-    );
-
-    const data =
-    await response.json();
-
-    botDiv.textContent =
-    data.reply;
-
+    });
   }
 
-  catch(error){
+  // 3. SEND MESSAGE FUNCTION
+  async function sendMessage() {
+    const message = chatInput.value.trim();
+    if (message === "") return;
 
-    console.warn("Backend server not reachable. Using client-side fallback reply.");
-    botDiv.textContent = getLocalFallbackReply(message);
+    // Append User Message
+    const userDiv = document.createElement("div");
+    userDiv.classList.add("user-message");
+    userDiv.textContent = message;
+    chatBody.appendChild(userDiv);
 
+    // Clear Input
+    chatInput.value = "";
+
+    // Append Bot Thinking Message
+    const botDiv = document.createElement("div");
+    botDiv.classList.add("bot-message");
+    botDiv.textContent = "Thinking...";
+    chatBody.appendChild(botDiv);
+
+    // Auto scroll
+    chatBody.scrollTop = chatBody.scrollHeight;
+
+    try {
+      const response = await fetch("http://localhost:3000/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ message })
+      });
+
+      if (!response.ok) throw new Error("Server error");
+
+      const data = await response.json();
+      botDiv.textContent = data.reply;
+    } catch (error) {
+      console.warn("Backend server not reachable. Using client-side fallback reply.");
+      // Small simulated delay for realistic bot interaction
+      setTimeout(() => {
+        botDiv.textContent = getLocalFallbackReply(message);
+        chatBody.scrollTop = chatBody.scrollHeight;
+      }, 450);
+    }
   }
-
-}
+});
 
 /* INTELLIGENT FALLBACK CHATBOT ENGINE */
 function getLocalFallbackReply(message) {
   const msg = message.toLowerCase();
-  
+
   if (msg.includes("project") || msg.includes("work") || msg.includes("portfolio") || msg.includes("built") || msg.includes("develop")) {
-    return "Prince has built several awesome projects! 🚀\n\n1. EduCrush: An AI-powered educational platform with interactive quizzes and career guidance.\n2. AI Resume Builder: A smart resume generator featuring AI-assisted content writing.\n3. Gamified Learning: Engaging platform with coding puzzles and achievement badges.\n4. Admission Counselling: A guiding platform for students looking for college counsel.\n\nWhich one would you like to know more about?";
+    return `Prince Kumar has built several innovative projects! 🚀
+
+🌟 **EduCrush**
+An AI-powered educational platform with interactive quizzes, career guidance tools, and customized learning paths.
+
+🌟 **AI Resume Builder**
+A smart resume generator featuring AI-assisted content writing, templates, and resume scoring.
+
+🌟 **Gamified Learning**
+An engaging portal with coding challenges, interactive tutorials, leaderboard ranking, and badging system.
+
+🌟 **Admission Counselling**
+A comprehensive portal designed to streamline college choices, eligibility checks, and application counselling.
+
+Which project would you like to explore in detail?`;
   }
-  
-  if (msg.includes("skill") || msg.includes("tech") || msg.includes("code") || msg.includes("language") || msg.includes("capable") || msg.includes("know")) {
-    return "Prince is highly proficient in modern web technologies! 💻\n\n• Frontend: HTML5, CSS3, JavaScript (ES6+), React.js, and Tailwind CSS.\n• Backend & Database: Node.js, Express, MongoDB, and Firebase.\n• Tools: Git, GitHub, and email integration.\n\nHe has over 100+ hours of coding experience and enjoys creating premium user interfaces!";
+
+  if (msg.includes("skill") || msg.includes("tech") || msg.includes("code") || msg.includes("language") || msg.includes("capable") || msg.includes("know") || msg.includes("stack")) {
+    return `Prince's Technical Stack & Expertise: 💻
+
+• **Frontend Development**: HTML5, CSS3, JavaScript (ES6+), React.js, Tailwind CSS.
+• **Backend Engineering**: Node.js, Express.js.
+• **Databases & Cloud**: Supabase, MongoDB, Firebase.
+• **AI & Analytics**: Python, TensorFlow, Machine Learning Concepts, Data Analysis.
+• **Version Control & Tools**: Git, GitHub, VS Code, npm.
+
+He is highly skilled in crafting intuitive responsive layouts and integrating conversational AI tools directly into web applications.`;
   }
-  
-  if (msg.includes("contact") || msg.includes("email") || msg.includes("phone") || msg.includes("reach") || msg.includes("hire") || msg.includes("social") || msg.includes("github") || msg.includes("linkedin")) {
-    return "You can easily connect with Prince! 🤝\n\n• 📧 Email: princesingh23032006@gmail.com\n• 📞 Phone: +91 7256896349\n• 📍 Location: Bihar, India\n• 🌐 GitHub: github.com/helloprincesingh\n\nFeel free to send a message via the Contact Form on the Contact page!";
+
+  if (msg.includes("contact") || msg.includes("email") || msg.includes("phone") || msg.includes("reach") || msg.includes("social") || msg.includes("github") || msg.includes("linkedin")) {
+    return `You can get in touch with Prince Kumar through any of these channels: 🤝
+
+• 📧 **Email**: princesingh23032006@gmail.com
+• 💼 **LinkedIn**: linkedin.com/in/prince-kumar-2303/
+• 🌐 **GitHub**: github.com/princekumar2303
+• 🐦 **Twitter/X**: twitter.com/princekumar2303
+• 📍 **Location**: Dehradun, Uttarakhand, India
+
+Feel free to fill out the form on the **Contact** page to send him a direct message!`;
   }
-  
+
+  if (msg.includes("education") || msg.includes("study") || msg.includes("college") || msg.includes("btech") || msg.includes("university")) {
+    return `Prince's Educational Profile: 🎓
+
+• **Degree**: Bachelor of Technology (B.Tech) in Computer Science & Engineering.
+• **Institution**: JB Institute of Technology (JBIT), Dehradun, India.
+• **Interests**: Full-Stack Web Development, Artificial Intelligence, Machine Learning, and Cloud Integrations.
+
+He combines theoretical computer science knowledge with intensive practical project building to solve real-world problems.`;
+  }
+
+  if (msg.includes("freelance") || msg.includes("hire") || msg.includes("work") || msg.includes("available") || msg.includes("internship")) {
+    return `Yes! Prince is actively available for: 💼
+
+• **Freelance Projects**: Web application design, UI/UX upgrades, React frontend work, and AI bot integrations.
+• **Internships**: Software development, frontend development, or AI/ML roles.
+• **Collaborations**: Open-source contributions or tech startups.
+
+Would you like to get his contact info or resume to proceed?`;
+  }
+
   if (msg.includes("who are you") || msg.includes("about") || msg.includes("name") || msg.includes("prince") || msg.includes("introduce") || msg.includes("you do")) {
-    return "I am Prince's AI Assistant! 🤖\n\nPrince Kumar is a passionate Frontend Developer, AI Enthusiast, and B.Tech Engineering Student at JB Institute of Technology, Dehradun. He loves building futuristic, clean, and interactive websites that make a real difference in educational technology.";
+    return `Hello! I am Prince's AI Portfolio Assistant. 🤖
+
+I am here to tell you about Prince Kumar—an AI/ML Engineer and Full-Stack Developer. He specializes in designing next-gen user interfaces, developing web architectures (React/Node.js), and deploying intelligent AI components.
+
+Feel free to ask me about his **projects**, **skills**, **education**, or how to **hire** him!`;
   }
-  
+
   if (msg.includes("hello") || msg.includes("hi") || msg.includes("hey") || msg.includes("greet") || msg.includes("welcome")) {
-    return "Hello there! 👋 I am Prince's AI Assistant. How can I help you today? Ask me about Prince's projects, skills, or contact info!";
+    return `Hello there! 👋 I am Prince's AI Portfolio Assistant.
+
+How can I help you today?
+Feel free to click any of the suggestion chips below or ask me questions about Prince's works, skills, or studies!`;
   }
-  
-  return "That's a great question! Prince is a talented B.Tech Engineering Student and Web Developer. He is skilled in React, Node.js, and AI integrations. Feel free to explore the 'Projects' or 'About' page to learn more, or use the 'Contact' page to get in touch directly!";
-}
+
+  return `That's an interesting question! 
+
+Prince Kumar is a B.Tech Engineering Student and Developer specializing in React, Node.js, and AI integrations. 
+
+Please explore:
+• Click the **Technical Skills** or **Top Projects** button below to learn more about his capabilities.
+• Check out the **Contact** page to connect with him directly!`;
+}

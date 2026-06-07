@@ -24,17 +24,30 @@ recognition.continuous = false;
 
 recognition.interimResults = false;
 
-/* CLICK */
+let isListening = false;
+
+/* CLICK TOGGLE */
 voiceBtn.addEventListener(
   "click",
   ()=>{
+    if (isListening) {
+      recognition.stop();
+    } else {
+      try {
+        recognition.start();
+      } catch (err) {
+        console.error("Speech recognition start failed:", err);
+      }
+    }
+  }
+);
 
-    recognition.start();
-
-    voiceBtn.classList.add(
-      "listening"
-    );
-
+/* START EVENT */
+recognition.addEventListener(
+  "start",
+  ()=>{
+    isListening = true;
+    voiceBtn.classList.add("listening");
   }
 );
 
@@ -42,23 +55,8 @@ voiceBtn.addEventListener(
 recognition.addEventListener(
   "result",
   (e)=>{
-
-    const transcript =
-
-    e.results[0][0]
-    .transcript
-    .toLowerCase();
-
-    /* REMOVE */
-    voiceBtn.classList.remove(
-      "listening"
-    );
-
-    /* COMMANDS */
-    handleCommand(
-      transcript
-    );
-
+    const transcript = e.results[0][0].transcript.toLowerCase();
+    handleCommand(transcript);
   }
 );
 
@@ -66,11 +64,8 @@ recognition.addEventListener(
 recognition.addEventListener(
   "end",
   ()=>{
-
-    voiceBtn.classList.remove(
-      "listening"
-    );
-
+    isListening = false;
+    voiceBtn.classList.remove("listening");
   }
 );
 
